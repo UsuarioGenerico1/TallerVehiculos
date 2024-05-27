@@ -21,5 +21,10 @@ namespace TallerVehiculos
         {
 
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
