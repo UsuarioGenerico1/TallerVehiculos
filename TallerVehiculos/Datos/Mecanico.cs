@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TallerVehiculos.Datos
 {
-    internal class Mecanico
+    internal class Mecanico: Persona
     {
+        int ID_Mecanico;
+        String Direccion;
+        String Especialidad;
+        String Experiencia;
     }
 }

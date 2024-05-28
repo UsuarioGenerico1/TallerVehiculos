@@ -8,5 +8,8 @@ namespace TallerVehiculos.Datos
 {
     internal class Repuesto
     {
+        int ID_Repuesto;
+        String Nombre_Respuesto;
+        double Precio;
     }
 }

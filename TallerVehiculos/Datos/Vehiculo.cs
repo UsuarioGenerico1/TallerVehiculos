@@ -8,5 +8,10 @@ namespace TallerVehiculos.Datos
 {
     internal class Vehiculo
     {
+        int ID_Vehiculo;
+        String Placa;
+        String Marca;
+        String Modelo;
+        String Color;
     }
 }

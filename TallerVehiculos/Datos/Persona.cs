@@ -8,5 +8,8 @@ namespace TallerVehiculos.Datos
 {
     internal class Persona
     {
+        String Cedula;
+        String Nombre;
+        String Appelido;
     }
 }

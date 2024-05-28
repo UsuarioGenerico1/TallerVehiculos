@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TallerVehiculos.Datos
 {
-    internal class Cliente
+    internal class Cliente: Persona
     {
+        int ID_Cliente;
+        String Correo_Electronico;
+        DateTime Fecha_Registro;
     }
 }
