@@ -22,7 +22,7 @@ namespace TallerVehiculos.Datos
             int codigo_mantenimiento,
             int id_cliente,
             int id_mecanico,
-            datetime fecha_mantenimiento,
+            DateTime fecha_mantenimiento,
             int id_vehiculo,
             string diagnostico,
             string trabajos_realizados,

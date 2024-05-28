@@ -8,8 +8,25 @@ namespace TallerVehiculos.Datos
 {
     internal class Persona
     {
-        String Cedula;
-        String Nombre;
-        String Appelido;
+        private string Cedula;
+        private string Nombre;
+        private string Appelido;
+
+        public Persona() {
+            Cedula = "";
+            Nombre = "";
+            Appelido = "";
+        }
+
+        public Persona(string cedula, string nombre, string appelido)
+        {
+            this.Cedula1 = cedula;
+            this.Nombre1 = nombre;
+            this.Appelido1 = appelido;
+        }
+
+        public string Cedula1 { get => Cedula; set => Cedula = value; }
+        public string Nombre1 { get => Nombre; set => Nombre = value; }
+        public string Appelido1 { get => Appelido; set => Appelido = value; }
     }
 }
