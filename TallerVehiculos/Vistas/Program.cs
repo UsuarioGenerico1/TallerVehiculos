@@ -1,4 +1,4 @@
-namespace TallerVehiculos
+namespace TallerVehiculos.Vistas
 {
     internal static class Program
     {
