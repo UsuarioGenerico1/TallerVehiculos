@@ -20,9 +20,9 @@ namespace TallerVehiculos.Datos
 
         public Persona(string cedula, string nombre, string appelido)
         {
-            this.Cedula1 = cedula;
-            this.Nombre1 = nombre;
-            this.Appelido1 = appelido;
+            this.Cedula = cedula;
+            this.Nombre = nombre;
+            this.Appelido = appelido;
         }
 
         public string Cedula1 { get => Cedula; set => Cedula = value; }

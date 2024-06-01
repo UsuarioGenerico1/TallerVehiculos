@@ -14,9 +14,9 @@ namespace TallerVehiculos.Datos
 
         public Repuesto(int iD_Repuesto, String nombre_Respuesto, double precio)
         {
-            ID_Repuesto1 = iD_Repuesto;
-            Nombre_Respuesto1 = nombre_Respuesto;
-            Precio1 = precio;
+            this.ID_Repuesto = iD_Repuesto;
+            this.Nombre_Respuesto = nombre_Respuesto;
+            this.Precio = precio;
         }
 
         public int ID_Repuesto1 { get => ID_Repuesto; set => ID_Repuesto = value; }

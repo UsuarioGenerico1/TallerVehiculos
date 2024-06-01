@@ -24,10 +24,10 @@ namespace TallerVehiculos.Datos
         public Mecanico(int iD_Mecanico, string direccion, string especialidad, string experiencia
             ,string cedula,string nombre,string apellido):base(cedula,nombre,apellido)
         {
-            ID_Mecanico1 = iD_Mecanico;
-            Direccion1 = direccion;
-            Especialidad1 = especialidad;
-            Experiencia1 = experiencia;
+            this.ID_Mecanico = iD_Mecanico;
+            this.Direccion = direccion;
+            this.Especialidad = especialidad;
+            this.Experiencia = experiencia;
         }
 
         public int ID_Mecanico1 { get => ID_Mecanico; set => ID_Mecanico = value; }

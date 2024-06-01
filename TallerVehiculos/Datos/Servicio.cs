@@ -17,9 +17,9 @@ namespace TallerVehiculos.Datos
         }
         public Servicio(int iD_Servicio, string nombre_Servicio, double precio)
         {
-            ID_Servicio1 = iD_Servicio;
-            Nombre_Servicio1 = nombre_Servicio;
-            Precio1 = precio;
+            this.ID_Servicio = iD_Servicio;
+            this.Nombre_Servicio = nombre_Servicio;
+            this.Precio = precio;
         }
 
         public int ID_Servicio1 { get => ID_Servicio; set => ID_Servicio = value; }

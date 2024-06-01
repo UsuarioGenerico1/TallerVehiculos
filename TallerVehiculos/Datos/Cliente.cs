@@ -20,9 +20,9 @@ namespace TallerVehiculos.Datos
         public Cliente(int iD_Cliente, string correo_Electronico, DateTime fecha_Registro, 
             string cedula, string nombre, string apellido):base(cedula,nombre,apellido)
         {
-            ID_Cliente1 = iD_Cliente;
-            Correo_Electronico1 = correo_Electronico;
-            Fecha_Registro1 = fecha_Registro;
+            this.ID_Cliente = iD_Cliente;
+            this.Correo_Electronico = correo_Electronico;
+            this.Fecha_Registro = fecha_Registro;
         }
 
         public int ID_Cliente1 { get => ID_Cliente; set => ID_Cliente = value; }
