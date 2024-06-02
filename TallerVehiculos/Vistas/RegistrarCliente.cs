@@ -14,11 +14,21 @@ namespace TallerVehiculos
 {
     public partial class RegistrarCliente : Form
     {
-        ControladorCliente clienteController = new ControladorCliente();
+        ControladorCliente clienteController;
         private bool banderaNuevo = true;
-        public RegistrarCliente()
+        int index = -1;
+        internal RegistrarCliente(ControladorCliente Controller)
         {
             InitializeComponent();
+            this.clienteController = Controller;
+            if (clienteController.Lista_Clientes != null)
+            {
+                dataGridView1.DataSource = clienteController.Lista_Clientes;
+            }
+            else
+            {
+                Console.WriteLine("no hay nada");
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -33,56 +43,79 @@ namespace TallerVehiculos
             nuevoCliente.Correo_Electronico1 = textCorreo.Text;
             nuevoCliente.Fecha_Registro1 = dateTimePicker1.Value;
 
-            if (banderaNuevo){
-                clienteController.agregarCliente(nuevoCliente);
-            }
-            else {
-                clienteController.modificarCliente(nuevoCliente);
-            }
+            clienteController.agregarCliente(nuevoCliente);
 
             MessageBox.Show("datos registrados");
 
             GetDataCliente();
-            btnGuardar.Enabled = false;
-            btnEliminar.Enabled = false;
-            btnNuevo.Enabled = true;
+            limpiar();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                textCedula.Text = string.Empty;
-                textApellido.Text = string.Empty;
-                textCorreo.Text = string.Empty;
-                textNombre.Text = string.Empty;
-                dateTimePicker1.Value = DateTime.Now;
+            index = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[index];
 
-                btnGuardar.Enabled = true;
-                btnEliminar.Enabled = false;
-                btnNuevo.Enabled = false;
+            textCedula.Text = row.Cells[3].Value.ToString();
+            textNombre.Text = row.Cells[4].Value.ToString();
+            textApellido.Text = row.Cells[5].Value.ToString();
+            textCorreo.Text = row.Cells[1].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(row.Cells[2].Value);
 
-
-                btnNuevo.Enabled = true;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("erro" + ex.Message);
-            }
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
 
+            if (index >= 0)
+            {
+                Cliente selectCliente = clienteController.Lista_Clientes[index];
+                selectCliente.Cedula1 = textCedula.Text;
+                selectCliente.Nombre1 = textNombre.Text;
+                selectCliente.Appelido1 = textApellido.Text;
+                selectCliente.Correo_Electronico1 = textCorreo.Text;
+                selectCliente.Fecha_Registro1 = dateTimePicker1.Value;
+                clienteController.Lista_Clientes.ResetItem(index);
+            }
+            MessageBox.Show("los datos se han actualizado");
+            limpiar();
+        }
         private void GetDataCliente()
         {
             try
             {
                 dataGridView1.DataSource = clienteController.Lista_Clientes;
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error al obtener los datos" + ex.Message);
             }
+        }
+        public void limpiar()
+        {
+            textCedula.Text = string.Empty;
+            textNombre.Text = string.Empty;
+            textApellido.Text = string.Empty;
+            textCorreo.Text = string.Empty;
+            dateTimePicker1.Value = DateTime.Now;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult r;
+            r = MessageBox.Show("Esta seguro que quiere eliminar los datos","Eliminar Datos",MessageBoxButtons.YesNo);
+            if (r==DialogResult.Yes) {
+                if (index >= 0)
+                {
+
+                    clienteController.Lista_Clientes.RemoveAt(index);
+                    index = -1;
+                    limpiar();
+                }
+                MessageBox.Show("los datos se han borrado");
+            }
+            
         }
     }
 }

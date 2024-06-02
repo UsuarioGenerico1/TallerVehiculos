@@ -82,10 +82,11 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(938, 230);
             dataGridView1.TabIndex = 14;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button4
             // 
-            button4.Location = new Point(746, 191);
+            button4.Location = new Point(746, 200);
             button4.Name = "button4";
             button4.Size = new Size(144, 44);
             button4.TabIndex = 13;
@@ -100,26 +101,27 @@
             btnEliminar.TabIndex = 12;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(746, 94);
+            btnGuardar.Location = new Point(746, 37);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(144, 40);
             btnGuardar.TabIndex = 11;
-            btnGuardar.Text = "Guardar";
+            btnGuardar.Text = "Agregar";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(746, 39);
+            btnNuevo.Location = new Point(746, 86);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(144, 47);
             btnNuevo.TabIndex = 10;
-            btnNuevo.Text = "Nuevo";
+            btnNuevo.Text = "Actualizar";
             btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
+            btnNuevo.Click += btnActualizar_Click;
             // 
             // dateTimePicker1
             // 

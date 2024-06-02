@@ -14,7 +14,7 @@ namespace TallerVehiculos
 {
     public partial class RegistroMecanico : Form
     {
-        ControladorMecanico mecanicoController = new ControladorMecanico();
+        static ControladorMecanico mecanicoController = new ControladorMecanico();
         public bool banderaNuevo = true;
         public RegistroMecanico()
         {

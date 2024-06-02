@@ -11,11 +11,17 @@ namespace TallerVehiculos.Controlador
     internal class ControladorCliente
     {
 
-        public BindingList<Cliente> Lista_Clientes =new BindingList<Cliente>();
+        public BindingList<Cliente> Lista_Clientes { get; set; }
+
+
+        public ControladorCliente() {
+            Lista_Clientes = new BindingList<Cliente>();
+        }
 
         public void agregarCliente (Cliente cliente)
         {
             Lista_Clientes.Add (cliente);
+            
         }
 
 
@@ -31,5 +37,6 @@ namespace TallerVehiculos.Controlador
             }
 
         }
+
     }
 }

@@ -29,7 +29,18 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button1 = new Button();
             groupBox4 = new GroupBox();
+            textBox9 = new TextBox();
+            richTextBox1 = new RichTextBox();
+            dateTimePicker1 = new DateTimePicker();
+            comboBox3 = new ComboBox();
+            groupBox5 = new GroupBox();
+            radioButton5 = new RadioButton();
+            radioButton4 = new RadioButton();
+            radioButton3 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -45,36 +56,25 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
-            label11 = new Label();
-            label12 = new Label();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            label13 = new Label();
-            label14 = new Label();
-            comboBox2 = new ComboBox();
-            label15 = new Label();
-            label16 = new Label();
-            textBox7 = new TextBox();
             textBox8 = new TextBox();
-            groupBox5 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton5 = new RadioButton();
-            comboBox3 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            richTextBox1 = new RichTextBox();
-            textBox9 = new TextBox();
-            button1 = new Button();
+            textBox7 = new TextBox();
+            label16 = new Label();
+            label15 = new Label();
+            comboBox2 = new ComboBox();
+            label14 = new Label();
+            groupBox1 = new GroupBox();
+            label13 = new Label();
+            textBox6 = new TextBox();
+            textBox5 = new TextBox();
+            label12 = new Label();
+            label11 = new Label();
+            cbCedula = new ComboBox();
             panel1.SuspendLayout();
             groupBox4.SuspendLayout();
+            groupBox5.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
-            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -89,6 +89,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1124, 802);
             panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(365, 725);
+            button1.Name = "button1";
+            button1.Size = new Size(384, 65);
+            button1.TabIndex = 6;
+            button1.Text = "Guardar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -109,6 +118,104 @@
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Datos Mantenimiento";
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(736, 33);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(314, 27);
+            textBox9.TabIndex = 10;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(736, 77);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(315, 154);
+            richTextBox1.TabIndex = 9;
+            richTextBox1.Text = "";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(196, 43);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(319, 27);
+            dateTimePicker1.TabIndex = 8;
+            // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(196, 89);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(238, 28);
+            comboBox3.TabIndex = 7;
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(radioButton5);
+            groupBox5.Controls.Add(radioButton4);
+            groupBox5.Controls.Add(radioButton3);
+            groupBox5.Controls.Add(radioButton2);
+            groupBox5.Controls.Add(radioButton1);
+            groupBox5.Location = new Point(101, 118);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(333, 110);
+            groupBox5.TabIndex = 6;
+            groupBox5.TabStop = false;
+            // 
+            // radioButton5
+            // 
+            radioButton5.AutoSize = true;
+            radioButton5.Location = new Point(157, 48);
+            radioButton5.Name = "radioButton5";
+            radioButton5.Size = new Size(117, 24);
+            radioButton5.TabIndex = 4;
+            radioButton5.TabStop = true;
+            radioButton5.Text = "radioButton5";
+            radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            radioButton4.AutoSize = true;
+            radioButton4.Location = new Point(157, 18);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new Size(117, 24);
+            radioButton4.TabIndex = 3;
+            radioButton4.TabStop = true;
+            radioButton4.Text = "radioButton4";
+            radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(13, 79);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(117, 24);
+            radioButton3.TabIndex = 2;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "radioButton3";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(13, 49);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(100, 24);
+            radioButton2.TabIndex = 1;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Alineacion";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(13, 19);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(78, 24);
+            radioButton1.TabIndex = 0;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Lavado";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -254,96 +361,19 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del mecanico";
             // 
-            // groupBox1
+            // textBox8
             // 
-            groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(textBox5);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Dock = DockStyle.Top;
-            groupBox1.Location = new Point(0, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1124, 170);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Datos del cliente";
+            textBox8.Location = new Point(501, 77);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(260, 27);
+            textBox8.TabIndex = 5;
             // 
-            // comboBox1
+            // textBox7
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(108, 40);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(226, 28);
-            comboBox1.TabIndex = 0;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(23, 48);
-            label11.Name = "label11";
-            label11.Size = new Size(55, 20);
-            label11.TabIndex = 2;
-            label11.Text = "Cedula";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(398, 47);
-            label12.Name = "label12";
-            label12.Size = new Size(64, 20);
-            label12.TabIndex = 3;
-            label12.Text = "Nombre";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(486, 41);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(275, 27);
-            textBox5.TabIndex = 4;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(196, 100);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(565, 27);
-            textBox6.TabIndex = 5;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(28, 107);
-            label13.Name = "label13";
-            label13.Size = new Size(132, 20);
-            label13.TabIndex = 6;
-            label13.Text = "Correo Electronico";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(16, 39);
-            label14.Name = "label14";
-            label14.Size = new Size(55, 20);
-            label14.TabIndex = 0;
-            label14.Text = "Cedula";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(108, 31);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(226, 28);
-            comboBox2.TabIndex = 1;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(402, 36);
-            label15.Name = "label15";
-            label15.Size = new Size(64, 20);
-            label15.TabIndex = 2;
-            label15.Text = "Nombre";
+            textBox7.Location = new Point(501, 35);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(260, 27);
+            textBox7.TabIndex = 4;
             // 
             // label16
             // 
@@ -354,126 +384,97 @@
             label16.TabIndex = 3;
             label16.Text = "Especialidad";
             // 
-            // textBox7
+            // label15
             // 
-            textBox7.Location = new Point(501, 35);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(260, 27);
-            textBox7.TabIndex = 4;
+            label15.AutoSize = true;
+            label15.Location = new Point(402, 36);
+            label15.Name = "label15";
+            label15.Size = new Size(64, 20);
+            label15.TabIndex = 2;
+            label15.Text = "Nombre";
             // 
-            // textBox8
+            // comboBox2
             // 
-            textBox8.Location = new Point(501, 77);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(260, 27);
-            textBox8.TabIndex = 5;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Location = new Point(108, 31);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(226, 28);
+            comboBox2.TabIndex = 1;
             // 
-            // groupBox5
+            // label14
             // 
-            groupBox5.Controls.Add(radioButton5);
-            groupBox5.Controls.Add(radioButton4);
-            groupBox5.Controls.Add(radioButton3);
-            groupBox5.Controls.Add(radioButton2);
-            groupBox5.Controls.Add(radioButton1);
-            groupBox5.Location = new Point(101, 118);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(333, 110);
-            groupBox5.TabIndex = 6;
-            groupBox5.TabStop = false;
+            label14.AutoSize = true;
+            label14.Location = new Point(16, 39);
+            label14.Name = "label14";
+            label14.Size = new Size(55, 20);
+            label14.TabIndex = 0;
+            label14.Text = "Cedula";
             // 
-            // radioButton1
+            // groupBox1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(13, 19);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(78, 24);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Lavado";
-            radioButton1.UseVisualStyleBackColor = true;
+            groupBox1.Controls.Add(label13);
+            groupBox1.Controls.Add(textBox6);
+            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(label12);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(cbCedula);
+            groupBox1.Dock = DockStyle.Top;
+            groupBox1.Location = new Point(0, 0);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(1124, 170);
+            groupBox1.TabIndex = 3;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Datos del cliente";
             // 
-            // radioButton2
+            // label13
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(13, 49);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(100, 24);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Alineacion";
-            radioButton2.UseVisualStyleBackColor = true;
+            label13.AutoSize = true;
+            label13.Location = new Point(28, 107);
+            label13.Name = "label13";
+            label13.Size = new Size(132, 20);
+            label13.TabIndex = 6;
+            label13.Text = "Correo Electronico";
             // 
-            // radioButton3
+            // textBox6
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(13, 79);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(117, 24);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
+            textBox6.Location = new Point(196, 100);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(565, 27);
+            textBox6.TabIndex = 5;
             // 
-            // radioButton4
+            // textBox5
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(157, 18);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(117, 24);
-            radioButton4.TabIndex = 3;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "radioButton4";
-            radioButton4.UseVisualStyleBackColor = true;
+            textBox5.Location = new Point(486, 41);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(275, 27);
+            textBox5.TabIndex = 4;
             // 
-            // radioButton5
+            // label12
             // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(157, 48);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(117, 24);
-            radioButton5.TabIndex = 4;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "radioButton5";
-            radioButton5.UseVisualStyleBackColor = true;
+            label12.AutoSize = true;
+            label12.Location = new Point(398, 47);
+            label12.Name = "label12";
+            label12.Size = new Size(64, 20);
+            label12.TabIndex = 3;
+            label12.Text = "Nombre";
             // 
-            // comboBox3
+            // label11
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(196, 89);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(238, 28);
-            comboBox3.TabIndex = 7;
+            label11.AutoSize = true;
+            label11.Location = new Point(23, 48);
+            label11.Name = "label11";
+            label11.Size = new Size(55, 20);
+            label11.TabIndex = 2;
+            label11.Text = "Cedula";
             // 
-            // dateTimePicker1
+            // cbCedula
             // 
-            dateTimePicker1.Location = new Point(196, 43);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(319, 27);
-            dateTimePicker1.TabIndex = 8;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(736, 77);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(315, 154);
-            richTextBox1.TabIndex = 9;
-            richTextBox1.Text = "";
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(736, 33);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(314, 27);
-            textBox9.TabIndex = 10;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(365, 725);
-            button1.Name = "button1";
-            button1.Size = new Size(384, 65);
-            button1.TabIndex = 6;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            cbCedula.FormattingEnabled = true;
+            cbCedula.Location = new Point(108, 40);
+            cbCedula.Name = "cbCedula";
+            cbCedula.Size = new Size(226, 28);
+            cbCedula.TabIndex = 0;
+            cbCedula.SelectedIndexChanged += cbCedula_SelectedIndexChanged;
             // 
             // Mantenimiento
             // 
@@ -486,14 +487,14 @@
             panel1.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -519,7 +520,7 @@
         private Label label9;
         private Label label12;
         private Label label11;
-        private ComboBox comboBox1;
+        private ComboBox cbCedula;
         private ComboBox comboBox2;
         private Label label14;
         private Label label13;
