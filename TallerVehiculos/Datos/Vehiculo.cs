@@ -26,11 +26,11 @@ namespace TallerVehiculos.Datos
 
         public Vehiculo(int iD_Vehiculo, string placa, string marca, string modelo, string color)
         {
-            ID_Vehiculo1 = iD_Vehiculo;
-            Placa1 = placa;
-            Marca1 = marca;
-            Modelo1 = modelo;
-            Color1 = color;
+            this.ID_Vehiculo = iD_Vehiculo;
+            this.Placa = placa;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Color = color;
         }
 
         public int ID_Vehiculo1 { get => ID_Vehiculo; set => ID_Vehiculo = value; }

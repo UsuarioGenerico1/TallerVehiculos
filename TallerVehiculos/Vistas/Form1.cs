@@ -8,12 +8,16 @@ namespace TallerVehiculos
         ControladorCliente clienteController;
         ControladorMecanico mecanicoController;
         ControladorServicio servicios;
+        ControladorMantenimiento mantenimiento1;
+        ControladorVehiculo vehiculoController;
         public Form1()
         {
             InitializeComponent();
             clienteController = new ControladorCliente();
             mecanicoController = new ControladorMecanico();
             servicios = new ControladorServicio();
+            mantenimiento1 = new ControladorMantenimiento(); 
+            vehiculoController = new ControladorVehiculo();
         }
 
         private void btn_rg_cliente_Click(object sender, EventArgs e)
@@ -30,7 +34,7 @@ namespace TallerVehiculos
 
         private void btn_gr_mantenimiento_Click(object sender, EventArgs e)
         {
-            Mantenimiento mantenimiento = new Mantenimiento(clienteController, mecanicoController,servicios); 
+            Mantenimiento mantenimiento = new Mantenimiento(clienteController, mecanicoController,servicios,mantenimiento1,vehiculoController); 
             mantenimiento.ShowDialog(); 
         }
     }

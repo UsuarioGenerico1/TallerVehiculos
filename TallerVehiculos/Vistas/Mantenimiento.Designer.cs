@@ -151,6 +151,7 @@
             cbTipoMantenimiento.Name = "cbTipoMantenimiento";
             cbTipoMantenimiento.Size = new Size(238, 28);
             cbTipoMantenimiento.TabIndex = 7;
+            cbTipoMantenimiento.SelectedIndexChanged += cbTipoMantenimiento_SelectedIndexChanged;
             // 
             // label9
             // 
@@ -169,7 +170,6 @@
             label8.Size = new Size(89, 20);
             label8.TabIndex = 3;
             label8.Text = "Diagnostico";
-            label8.Click += label8_Click;
             // 
             // label7
             // 

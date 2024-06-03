@@ -7,14 +7,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TallerVehiculos.Controlador;
+using TallerVehiculos.Datos;
 
 namespace TallerVehiculos.Vistas
 {
     public partial class FormularioRepuesto : Form
     {
-        public FormularioRepuesto()
+        ControladorRepuesto repuestoController;
+        internal FormularioRepuesto(ControladorRepuesto repuestoController)
         {
             InitializeComponent();
+            this.repuestoController = repuestoController;
+
+            if (repuestoController.Lista_Repuestos != null)
+            {
+                dataGridViewR.DataSource = repuestoController.Lista_Repuestos;
+            }
+            else
+            {
+                Console.WriteLine("no hay nada");
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Repuesto nuevoRepuesto = new Repuesto();
+            nuevoRepuesto.ID_Repuesto1 = repuestoController.Lista_Repuestos.Count + 1;
+            nuevoRepuesto.Nombre_Respuesto1 = textRepuesto.Text;
+            nuevoRepuesto.Precio1 = Convert.ToDouble(textPrecio.Text);
+            GetDataRepuesto();
+            MessageBox.Show("los datos se guardaron "+textRepuesto.Text+textPrecio.Text);
+            textRepuesto.Text=string.Empty;
+            textPrecio.Text=string.Empty;   
+        }
+
+        private void GetDataRepuesto()
+        {
+            try
+            {
+                dataGridViewR.DataSource = repuestoController.Lista_Repuestos;
+                MessageBox.Show("si llego aqui y solo esta bug");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener los datos" + ex.Message);
+            }
         }
     }
 }

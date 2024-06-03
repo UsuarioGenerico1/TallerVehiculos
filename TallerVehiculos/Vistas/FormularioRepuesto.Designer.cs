@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
+            btnEliminar = new Button();
+            btnGuardar = new Button();
+            dataGridViewR = new DataGridView();
+            textPrecio = new TextBox();
+            textRepuesto = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
+            label1 = new Label();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewR).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(btnEliminar);
+            groupBox1.Controls.Add(btnGuardar);
+            groupBox1.Controls.Add(dataGridViewR);
+            groupBox1.Controls.Add(textPrecio);
+            groupBox1.Controls.Add(textRepuesto);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(12, 12);
@@ -56,14 +56,48 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // label1
+            // btnEliminar
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(23, 64);
-            label1.Name = "label1";
-            label1.Size = new Size(130, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Nombre Repuesto";
+            btnEliminar.Location = new Point(563, 101);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.TabIndex = 6;
+            btnEliminar.Text = "eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(563, 53);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.TabIndex = 5;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // dataGridViewR
+            // 
+            dataGridViewR.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewR.Location = new Point(23, 211);
+            dataGridViewR.Name = "dataGridViewR";
+            dataGridViewR.RowHeadersWidth = 51;
+            dataGridViewR.RowTemplate.Height = 29;
+            dataGridViewR.Size = new Size(714, 188);
+            dataGridViewR.TabIndex = 4;
+            // 
+            // textPrecio
+            // 
+            textPrecio.Location = new Point(180, 103);
+            textPrecio.Name = "textPrecio";
+            textPrecio.Size = new Size(277, 27);
+            textPrecio.TabIndex = 3;
+            // 
+            // textRepuesto
+            // 
+            textRepuesto.Location = new Point(180, 61);
+            textRepuesto.Name = "textRepuesto";
+            textRepuesto.Size = new Size(275, 27);
+            textRepuesto.TabIndex = 2;
             // 
             // label2
             // 
@@ -74,47 +108,14 @@
             label2.TabIndex = 1;
             label2.Text = "Precio";
             // 
-            // textBox1
+            // label1
             // 
-            textBox1.Location = new Point(180, 61);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(275, 27);
-            textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(180, 103);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(277, 27);
-            textBox2.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(23, 211);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(714, 188);
-            dataGridView1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(563, 53);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 5;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(563, 101);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 6;
-            button2.Text = "eliminar";
-            button2.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(23, 64);
+            label1.Name = "label1";
+            label1.Size = new Size(130, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Nombre Repuesto";
             // 
             // FormularioRepuesto
             // 
@@ -126,18 +127,18 @@
             Text = "FormularioRepuesto";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewR).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBox1;
-        private Button button2;
-        private Button button1;
-        private DataGridView dataGridView1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private Button btnEliminar;
+        private Button btnGuardar;
+        private DataGridView dataGridViewR;
+        private TextBox textPrecio;
+        private TextBox textRepuesto;
         private Label label2;
         private Label label1;
     }
