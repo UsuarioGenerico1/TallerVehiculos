@@ -31,47 +31,41 @@
             panel1 = new Panel();
             button1 = new Button();
             groupBox4 = new GroupBox();
-            textBox9 = new TextBox();
-            richTextBox1 = new RichTextBox();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox3 = new ComboBox();
-            groupBox5 = new GroupBox();
-            radioButton5 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            checkedListBox1 = new CheckedListBox();
+            textDiagnostico = new TextBox();
+            richTextTrabajos = new RichTextBox();
+            dateTimePickerM = new DateTimePicker();
+            cbTipoMantenimiento = new ComboBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             groupBox3 = new GroupBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            textColor = new TextBox();
+            textModelo = new TextBox();
+            textMarca = new TextBox();
+            textPlaca = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
+            txtEspecialidad = new TextBox();
+            txtNombreMecanico = new TextBox();
             label16 = new Label();
             label15 = new Label();
-            comboBox2 = new ComboBox();
+            cbCedulaMecanico = new ComboBox();
             label14 = new Label();
             groupBox1 = new GroupBox();
             label13 = new Label();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
+            txtCorreoCliente = new TextBox();
+            txtNombreCliente = new TextBox();
             label12 = new Label();
             label11 = new Label();
             cbCedula = new ComboBox();
             panel1.SuspendLayout();
             groupBox4.SuspendLayout();
-            groupBox5.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -98,14 +92,15 @@
             button1.TabIndex = 6;
             button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(textBox9);
-            groupBox4.Controls.Add(richTextBox1);
-            groupBox4.Controls.Add(dateTimePicker1);
-            groupBox4.Controls.Add(comboBox3);
-            groupBox4.Controls.Add(groupBox5);
+            groupBox4.Controls.Add(checkedListBox1);
+            groupBox4.Controls.Add(textDiagnostico);
+            groupBox4.Controls.Add(richTextTrabajos);
+            groupBox4.Controls.Add(dateTimePickerM);
+            groupBox4.Controls.Add(cbTipoMantenimiento);
             groupBox4.Controls.Add(label9);
             groupBox4.Controls.Add(label8);
             groupBox4.Controls.Add(label7);
@@ -114,108 +109,48 @@
             groupBox4.Dock = DockStyle.Top;
             groupBox4.Location = new Point(0, 452);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(1124, 228);
+            groupBox4.Size = new Size(1124, 267);
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Datos Mantenimiento";
             // 
-            // textBox9
+            // checkedListBox1
             // 
-            textBox9.Location = new Point(736, 33);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(314, 27);
-            textBox9.TabIndex = 10;
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(120, 134);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(395, 136);
+            checkedListBox1.TabIndex = 11;
             // 
-            // richTextBox1
+            // textDiagnostico
             // 
-            richTextBox1.Location = new Point(736, 77);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(315, 154);
-            richTextBox1.TabIndex = 9;
-            richTextBox1.Text = "";
+            textDiagnostico.Location = new Point(736, 33);
+            textDiagnostico.Name = "textDiagnostico";
+            textDiagnostico.Size = new Size(314, 27);
+            textDiagnostico.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // richTextTrabajos
             // 
-            dateTimePicker1.Location = new Point(196, 43);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(319, 27);
-            dateTimePicker1.TabIndex = 8;
+            richTextTrabajos.Location = new Point(736, 77);
+            richTextTrabajos.Name = "richTextTrabajos";
+            richTextTrabajos.Size = new Size(315, 154);
+            richTextTrabajos.TabIndex = 9;
+            richTextTrabajos.Text = "";
             // 
-            // comboBox3
+            // dateTimePickerM
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(196, 89);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(238, 28);
-            comboBox3.TabIndex = 7;
+            dateTimePickerM.Location = new Point(196, 43);
+            dateTimePickerM.Name = "dateTimePickerM";
+            dateTimePickerM.Size = new Size(319, 27);
+            dateTimePickerM.TabIndex = 8;
             // 
-            // groupBox5
+            // cbTipoMantenimiento
             // 
-            groupBox5.Controls.Add(radioButton5);
-            groupBox5.Controls.Add(radioButton4);
-            groupBox5.Controls.Add(radioButton3);
-            groupBox5.Controls.Add(radioButton2);
-            groupBox5.Controls.Add(radioButton1);
-            groupBox5.Location = new Point(101, 118);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(333, 110);
-            groupBox5.TabIndex = 6;
-            groupBox5.TabStop = false;
-            // 
-            // radioButton5
-            // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(157, 48);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(117, 24);
-            radioButton5.TabIndex = 4;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "radioButton5";
-            radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(157, 18);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(117, 24);
-            radioButton4.TabIndex = 3;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "radioButton4";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(13, 79);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(117, 24);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(13, 49);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(100, 24);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Alineacion";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(13, 19);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(78, 24);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Lavado";
-            radioButton1.UseVisualStyleBackColor = true;
+            cbTipoMantenimiento.FormattingEnabled = true;
+            cbTipoMantenimiento.Location = new Point(196, 89);
+            cbTipoMantenimiento.Name = "cbTipoMantenimiento";
+            cbTipoMantenimiento.Size = new Size(238, 28);
+            cbTipoMantenimiento.TabIndex = 7;
             // 
             // label9
             // 
@@ -265,10 +200,10 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(textBox4);
-            groupBox3.Controls.Add(textBox3);
-            groupBox3.Controls.Add(textBox2);
-            groupBox3.Controls.Add(textBox1);
+            groupBox3.Controls.Add(textColor);
+            groupBox3.Controls.Add(textModelo);
+            groupBox3.Controls.Add(textMarca);
+            groupBox3.Controls.Add(textPlaca);
             groupBox3.Controls.Add(label4);
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(label2);
@@ -281,33 +216,33 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Datos del vehiculo";
             // 
-            // textBox4
+            // textColor
             // 
-            textBox4.Location = new Point(469, 83);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(280, 27);
-            textBox4.TabIndex = 7;
+            textColor.Location = new Point(469, 83);
+            textColor.Name = "textColor";
+            textColor.Size = new Size(280, 27);
+            textColor.TabIndex = 7;
             // 
-            // textBox3
+            // textModelo
             // 
-            textBox3.Location = new Point(79, 83);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(269, 27);
-            textBox3.TabIndex = 6;
+            textModelo.Location = new Point(79, 83);
+            textModelo.Name = "textModelo";
+            textModelo.Size = new Size(269, 27);
+            textModelo.TabIndex = 6;
             // 
-            // textBox2
+            // textMarca
             // 
-            textBox2.Location = new Point(469, 43);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(280, 27);
-            textBox2.TabIndex = 5;
+            textMarca.Location = new Point(469, 43);
+            textMarca.Name = "textMarca";
+            textMarca.Size = new Size(280, 27);
+            textMarca.TabIndex = 5;
             // 
-            // textBox1
+            // textPlaca
             // 
-            textBox1.Location = new Point(79, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(269, 27);
-            textBox1.TabIndex = 4;
+            textPlaca.Location = new Point(79, 43);
+            textPlaca.Name = "textPlaca";
+            textPlaca.Size = new Size(269, 27);
+            textPlaca.TabIndex = 4;
             // 
             // label4
             // 
@@ -347,11 +282,11 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox8);
-            groupBox2.Controls.Add(textBox7);
+            groupBox2.Controls.Add(txtEspecialidad);
+            groupBox2.Controls.Add(txtNombreMecanico);
             groupBox2.Controls.Add(label16);
             groupBox2.Controls.Add(label15);
-            groupBox2.Controls.Add(comboBox2);
+            groupBox2.Controls.Add(cbCedulaMecanico);
             groupBox2.Controls.Add(label14);
             groupBox2.Dock = DockStyle.Top;
             groupBox2.Location = new Point(0, 170);
@@ -361,19 +296,19 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del mecanico";
             // 
-            // textBox8
+            // txtEspecialidad
             // 
-            textBox8.Location = new Point(501, 77);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(260, 27);
-            textBox8.TabIndex = 5;
+            txtEspecialidad.Location = new Point(501, 77);
+            txtEspecialidad.Name = "txtEspecialidad";
+            txtEspecialidad.Size = new Size(260, 27);
+            txtEspecialidad.TabIndex = 5;
             // 
-            // textBox7
+            // txtNombreMecanico
             // 
-            textBox7.Location = new Point(501, 35);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(260, 27);
-            textBox7.TabIndex = 4;
+            txtNombreMecanico.Location = new Point(501, 35);
+            txtNombreMecanico.Name = "txtNombreMecanico";
+            txtNombreMecanico.Size = new Size(260, 27);
+            txtNombreMecanico.TabIndex = 4;
             // 
             // label16
             // 
@@ -393,13 +328,14 @@
             label15.TabIndex = 2;
             label15.Text = "Nombre";
             // 
-            // comboBox2
+            // cbCedulaMecanico
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(108, 31);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(226, 28);
-            comboBox2.TabIndex = 1;
+            cbCedulaMecanico.FormattingEnabled = true;
+            cbCedulaMecanico.Location = new Point(108, 31);
+            cbCedulaMecanico.Name = "cbCedulaMecanico";
+            cbCedulaMecanico.Size = new Size(226, 28);
+            cbCedulaMecanico.TabIndex = 1;
+            cbCedulaMecanico.SelectedIndexChanged += cbCedulaMecanico_SelectedIndexChanged;
             // 
             // label14
             // 
@@ -413,8 +349,8 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(label13);
-            groupBox1.Controls.Add(textBox6);
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(txtCorreoCliente);
+            groupBox1.Controls.Add(txtNombreCliente);
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(cbCedula);
@@ -435,19 +371,19 @@
             label13.TabIndex = 6;
             label13.Text = "Correo Electronico";
             // 
-            // textBox6
+            // txtCorreoCliente
             // 
-            textBox6.Location = new Point(196, 100);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(565, 27);
-            textBox6.TabIndex = 5;
+            txtCorreoCliente.Location = new Point(196, 100);
+            txtCorreoCliente.Name = "txtCorreoCliente";
+            txtCorreoCliente.Size = new Size(565, 27);
+            txtCorreoCliente.TabIndex = 5;
             // 
-            // textBox5
+            // txtNombreCliente
             // 
-            textBox5.Location = new Point(486, 41);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(275, 27);
-            textBox5.TabIndex = 4;
+            txtNombreCliente.Location = new Point(486, 41);
+            txtNombreCliente.Name = "txtNombreCliente";
+            txtNombreCliente.Size = new Size(275, 27);
+            txtNombreCliente.TabIndex = 4;
             // 
             // label12
             // 
@@ -487,8 +423,6 @@
             panel1.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -505,10 +439,10 @@
         private GroupBox groupBox3;
         private GroupBox groupBox2;
         private GroupBox groupBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textColor;
+        private TextBox textModelo;
+        private TextBox textMarca;
+        private TextBox textPlaca;
         private Label label4;
         private Label label3;
         private Label label2;
@@ -521,25 +455,20 @@
         private Label label12;
         private Label label11;
         private ComboBox cbCedula;
-        private ComboBox comboBox2;
+        private ComboBox cbCedulaMecanico;
         private Label label14;
         private Label label13;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox txtCorreoCliente;
+        private TextBox txtNombreCliente;
         private Label label16;
         private Label label15;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private GroupBox groupBox5;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private RichTextBox richTextBox1;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox3;
-        private RadioButton radioButton5;
+        private TextBox txtEspecialidad;
+        private TextBox txtNombreMecanico;
+        private RichTextBox richTextTrabajos;
+        private DateTimePicker dateTimePickerM;
+        private ComboBox cbTipoMantenimiento;
         private Button button1;
-        private TextBox textBox9;
+        private TextBox textDiagnostico;
+        private CheckedListBox checkedListBox1;
     }
 }

@@ -10,8 +10,11 @@ namespace TallerVehiculos.Controlador
 {
     internal class ControladorMecanico
     {
-        public BindingList<Mecanico> Lista_Mecanico = new BindingList<Mecanico>();
+        public BindingList<Mecanico> Lista_Mecanico { get; set;}
 
+        public ControladorMecanico() {
+            Lista_Mecanico = new BindingList<Mecanico>();
+        }
         public void agregarMecanico(Mecanico mecanico) {
             Lista_Mecanico.Add(mecanico);
         }

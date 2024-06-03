@@ -33,7 +33,7 @@
             button4 = new Button();
             btnEliminar = new Button();
             btnGuardar = new Button();
-            btnNuevo = new Button();
+            btnActualizar = new Button();
             textDireccion = new TextBox();
             textExp = new TextBox();
             textEspecialidad = new TextBox();
@@ -56,7 +56,7 @@
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(btnEliminar);
             groupBox1.Controls.Add(btnGuardar);
-            groupBox1.Controls.Add(btnNuevo);
+            groupBox1.Controls.Add(btnActualizar);
             groupBox1.Controls.Add(textDireccion);
             groupBox1.Controls.Add(textExp);
             groupBox1.Controls.Add(textEspecialidad);
@@ -86,6 +86,7 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(1134, 218);
             dataGridView1.TabIndex = 16;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button4
             // 
@@ -104,26 +105,27 @@
             btnEliminar.TabIndex = 14;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(791, 120);
+            btnGuardar.Location = new Point(791, 41);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(113, 51);
             btnGuardar.TabIndex = 13;
-            btnGuardar.Text = "Guardar";
+            btnGuardar.Text = "Agregar";
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // btnNuevo
+            // btnActualizar
             // 
-            btnNuevo.Location = new Point(791, 53);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(113, 51);
-            btnNuevo.TabIndex = 12;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = true;
-            btnNuevo.Click += btnNuevo_Click;
+            btnActualizar.Location = new Point(791, 116);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(113, 51);
+            btnActualizar.TabIndex = 12;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // textDireccion
             // 
@@ -254,6 +256,6 @@
         private Button button4;
         private Button btnEliminar;
         private Button btnGuardar;
-        private Button btnNuevo;
+        private Button btnActualizar;
     }
 }
