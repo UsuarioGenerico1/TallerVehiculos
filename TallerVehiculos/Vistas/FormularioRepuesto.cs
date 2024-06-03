@@ -36,8 +36,9 @@ namespace TallerVehiculos.Vistas
             nuevoRepuesto.ID_Repuesto1 = repuestoController.Lista_Repuestos.Count + 1;
             nuevoRepuesto.Nombre_Respuesto1 = textRepuesto.Text;
             nuevoRepuesto.Precio1 = Convert.ToDouble(textPrecio.Text);
+            repuestoController.agregarRepuesto(nuevoRepuesto);
             GetDataRepuesto();
-            MessageBox.Show("los datos se guardaron "+textRepuesto.Text+textPrecio.Text);
+           
             textRepuesto.Text=string.Empty;
             textPrecio.Text=string.Empty;   
         }
@@ -47,8 +48,6 @@ namespace TallerVehiculos.Vistas
             try
             {
                 dataGridViewR.DataSource = repuestoController.Lista_Repuestos;
-                MessageBox.Show("si llego aqui y solo esta bug");
-
             }
             catch (Exception ex)
             {
