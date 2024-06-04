@@ -23,7 +23,18 @@ namespace TallerVehiculos.Controlador
             Lista_Clientes.Add (cliente);
             
         }
-
+        public Cliente buscarCliente(string mantenimiento) {
+                Cliente clienteBuscar = new Cliente();
+            for (int i = 0; i < Lista_Clientes.Count; i++)
+            {
+                if (Lista_Clientes[i].Cedula1 == mantenimiento )
+                {
+                    clienteBuscar.Cedula1 = Lista_Clientes[i].Cedula1;
+                    clienteBuscar.Nombre1 = Lista_Clientes[i].Nombre1;
+                }
+            }
+            return clienteBuscar;
+        }
 
         public void modificarCliente(Cliente cliente)
         {

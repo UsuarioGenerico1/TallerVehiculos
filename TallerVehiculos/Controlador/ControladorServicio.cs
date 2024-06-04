@@ -35,6 +35,21 @@ namespace TallerVehiculos.Controlador
             Lista_Servicio.Add(servicio3);
         }
 
+
+        public Servicio buscarServicio(string servicio) {
+            Servicio servicioGuardado = new Servicio();
+            
+            for (int i = 0; i < Lista_Servicio.Count; i++)
+            {
+                if (Lista_Servicio[i].Nombre_Servicio1 == servicio)
+                {
+                    servicioGuardado.Nombre_Servicio1 = Lista_Servicio[i].Nombre_Servicio1;
+                    servicioGuardado.Precio1= Lista_Servicio[i].Precio1;  
+                }
+            }
+            return servicioGuardado;
+        }
+
     }
-    }
+}
 

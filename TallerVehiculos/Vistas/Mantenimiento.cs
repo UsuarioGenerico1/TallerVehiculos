@@ -40,14 +40,18 @@ namespace TallerVehiculos
 
         private void cbCedula_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < clienteController.Lista_Clientes.Count; i++)
+            int i;
+
+            for (i = 0; i < clienteController.Lista_Clientes.Count; i++)
             {
                 if (cbCedula.SelectedItem.ToString() == clienteController.Lista_Clientes[i].Cedula1)
                 {
                     txtNombreCliente.Text = clienteController.Lista_Clientes[i].Nombre1;
                     txtCorreoCliente.Text = clienteController.Lista_Clientes[i].Correo_Electronico1;
+                   
                 }
             }
+            
         }
         private void cbCedulaMecanico_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -86,12 +90,13 @@ namespace TallerVehiculos
             {
                 Console.WriteLine("no hay datos");
             }
-
+            //Datos Servicios
             if (servicios.Lista_Servicio != null)
             {
                 for (int i = 0; i < servicios.Lista_Servicio.Count; i++)
                 {
                     checkedListBox1.Items.Add(servicios.Lista_Servicio[i].Nombre_Servicio1);
+                
                 }
 
             }
@@ -103,6 +108,8 @@ namespace TallerVehiculos
             guardarDatosMantenimiento();
             guardarDatosServicios();
             guardarDatosVehiculo();
+            FormularioFactura nuevaFactura = new FormularioFactura(clienteController,mantenimientoController);
+            nuevaFactura.ShowDialog();
         }
 
         public void guardarDatosMantenimiento()
@@ -130,18 +137,20 @@ namespace TallerVehiculos
             try
             {
                 BindingList<Servicio> serviciosSelecinados = new BindingList<Servicio>();
+
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
                     if (checkedListBox1.CheckedItems[i] != null)
                     {
-                        serviciosSelecinados.Add(checkedListBox1.CheckedItems[i] as Servicio);
-                        MessageBox.Show(checkedListBox1.CheckedItems[i].ToString());
+                        serviciosSelecinados.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
+                        
                     }
                     else
                     {
                         Console.WriteLine("no hay valores");
                     }
 
+                    //MessageBox.Show(serviciosSelecinados[i].Nombre_Servicio1+ " " + serviciosSelecinados[i].Precio1.ToString());
                 }
             }
             catch (Exception ex)
