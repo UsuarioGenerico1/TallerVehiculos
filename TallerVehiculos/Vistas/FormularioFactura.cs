@@ -15,17 +15,27 @@ namespace TallerVehiculos.Vistas
     {
         ControladorCliente clienteController;
         ControladorMantenimiento mantenimientoController;
-        internal FormularioFactura(ControladorCliente clienteController,ControladorMantenimiento mantenimientoController)
+        int indice;
+        internal FormularioFactura(ControladorCliente clienteController,ControladorMantenimiento mantenimientoController,
+            int indice)
         {
             InitializeComponent();
             this.clienteController = clienteController;
             this.mantenimientoController = mantenimientoController;
+            this.indice = indice;   
+            asignarDatosCliente();
         }
 
         public void asignarDatosCliente()
         {
-            textCedula.Text = mantenimientoController.Lista_Mantenimientos[0].ReferenciaCliente;
-            textNombre.Text = clienteController.buscarCliente(mantenimientoController.Lista_Mantenimientos[0].ReferenciaCliente).Nombre1;
+          //  for (int i = 0; i < clienteController.Lista_Clientes.Count; i++) { }
+            textCedula.Text = mantenimientoController.Lista_Mantenimientos[indice].ReferenciaCliente;
+            textNombre.Text = clienteController.buscarCliente(mantenimientoController.Lista_Mantenimientos[indice].ReferenciaCliente).Nombre1;
+
+
+            
+            
+            
         }
 
 

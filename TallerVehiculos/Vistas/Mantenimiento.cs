@@ -15,6 +15,7 @@ namespace TallerVehiculos
 {
     public partial class Mantenimiento : Form
     {
+        int indice = 0;
         ControladorCliente clienteController;
         ControladorMecanico mecanicoController;
         ControladorServicio servicios;
@@ -48,7 +49,7 @@ namespace TallerVehiculos
                 {
                     txtNombreCliente.Text = clienteController.Lista_Clientes[i].Nombre1;
                     txtCorreoCliente.Text = clienteController.Lista_Clientes[i].Correo_Electronico1;
-                   
+                    indice = i;
                 }
             }
             
@@ -108,7 +109,7 @@ namespace TallerVehiculos
             guardarDatosMantenimiento();
             guardarDatosServicios();
             guardarDatosVehiculo();
-            FormularioFactura nuevaFactura = new FormularioFactura(clienteController,mantenimientoController);
+            FormularioFactura nuevaFactura = new FormularioFactura(clienteController,mantenimientoController,indice);
             nuevaFactura.ShowDialog();
         }
 
