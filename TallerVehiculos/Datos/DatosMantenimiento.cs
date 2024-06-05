@@ -36,6 +36,6 @@ namespace TallerVehiculos.Datos
         public string ReferenciaCliente { get => referenciaCliente; set => referenciaCliente = value; }
         public string ReferenciaMecanico { get => referenciaMecanico; set => referenciaMecanico = value; }
 
-        void CalcularPrecioMantenimiento() {}
+        
     }
 }

@@ -31,6 +31,8 @@
             panel1 = new Panel();
             button1 = new Button();
             groupBox4 = new GroupBox();
+            textBox1 = new TextBox();
+            label10 = new Label();
             checkedListBox1 = new CheckedListBox();
             textDiagnostico = new TextBox();
             richTextTrabajos = new RichTextBox();
@@ -81,14 +83,15 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1124, 802);
+            panel1.Size = new Size(1121, 913);
             panel1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(365, 725);
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(334, 777);
             button1.Name = "button1";
-            button1.Size = new Size(384, 65);
+            button1.Size = new Size(384, 81);
             button1.TabIndex = 6;
             button1.Text = "Guardar";
             button1.UseVisualStyleBackColor = true;
@@ -96,6 +99,9 @@
             // 
             // groupBox4
             // 
+            groupBox4.BackColor = SystemColors.Control;
+            groupBox4.Controls.Add(textBox1);
+            groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(checkedListBox1);
             groupBox4.Controls.Add(textDiagnostico);
             groupBox4.Controls.Add(richTextTrabajos);
@@ -107,56 +113,74 @@
             groupBox4.Controls.Add(label6);
             groupBox4.Controls.Add(label5);
             groupBox4.Dock = DockStyle.Top;
-            groupBox4.Location = new Point(0, 452);
+            groupBox4.Location = new Point(0, 459);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(1124, 267);
+            groupBox4.Size = new Size(1121, 331);
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Datos Mantenimiento";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(699, 43);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(314, 27);
+            textBox1.TabIndex = 13;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(652, 48);
+            label10.Name = "label10";
+            label10.Size = new Size(41, 23);
+            label10.TabIndex = 12;
+            label10.Text = " IVA";
+            // 
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(120, 134);
+            checkedListBox1.Location = new Point(28, 183);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(395, 136);
+            checkedListBox1.Size = new Size(487, 136);
             checkedListBox1.TabIndex = 11;
             // 
             // textDiagnostico
             // 
-            textDiagnostico.Location = new Point(736, 33);
+            textDiagnostico.Location = new Point(699, 94);
             textDiagnostico.Name = "textDiagnostico";
             textDiagnostico.Size = new Size(314, 27);
             textDiagnostico.TabIndex = 10;
             // 
             // richTextTrabajos
             // 
-            richTextTrabajos.Location = new Point(736, 77);
+            richTextTrabajos.Location = new Point(604, 183);
             richTextTrabajos.Name = "richTextTrabajos";
-            richTextTrabajos.Size = new Size(315, 154);
+            richTextTrabajos.Size = new Size(409, 136);
             richTextTrabajos.TabIndex = 9;
             richTextTrabajos.Text = "";
             // 
             // dateTimePickerM
             // 
-            dateTimePickerM.Location = new Point(196, 43);
+            dateTimePickerM.Location = new Point(202, 43);
             dateTimePickerM.Name = "dateTimePickerM";
-            dateTimePickerM.Size = new Size(319, 27);
+            dateTimePickerM.Size = new Size(313, 27);
             dateTimePickerM.TabIndex = 8;
+            dateTimePickerM.ValueChanged += dateTimePickerM_ValueChanged;
             // 
             // cbTipoMantenimiento
             // 
             cbTipoMantenimiento.FormattingEnabled = true;
-            cbTipoMantenimiento.Location = new Point(196, 89);
+            cbTipoMantenimiento.Location = new Point(202, 93);
             cbTipoMantenimiento.Name = "cbTipoMantenimiento";
-            cbTipoMantenimiento.Size = new Size(238, 28);
+            cbTipoMantenimiento.Size = new Size(313, 28);
             cbTipoMantenimiento.TabIndex = 7;
             cbTipoMantenimiento.SelectedIndexChanged += cbTipoMantenimiento_SelectedIndexChanged;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(28, 134);
+            label9.Location = new Point(28, 160);
             label9.Name = "label9";
             label9.Size = new Size(67, 20);
             label9.TabIndex = 4;
@@ -165,7 +189,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(593, 40);
+            label8.Location = new Point(604, 101);
             label8.Name = "label8";
             label8.Size = new Size(89, 20);
             label8.TabIndex = 3;
@@ -174,7 +198,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(23, 89);
+            label7.Location = new Point(28, 101);
             label7.Name = "label7";
             label7.Size = new Size(165, 20);
             label7.TabIndex = 2;
@@ -183,7 +207,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(593, 77);
+            label6.Location = new Point(604, 160);
             label6.Name = "label6";
             label6.Size = new Size(137, 20);
             label6.TabIndex = 1;
@@ -192,7 +216,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(23, 42);
+            label5.Location = new Point(28, 50);
             label5.Name = "label5";
             label5.Size = new Size(173, 20);
             label5.TabIndex = 0;
@@ -209,9 +233,9 @@
             groupBox3.Controls.Add(label2);
             groupBox3.Controls.Add(label1);
             groupBox3.Dock = DockStyle.Top;
-            groupBox3.Location = new Point(0, 295);
+            groupBox3.Location = new Point(0, 291);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1124, 157);
+            groupBox3.Size = new Size(1121, 168);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Datos del vehiculo";
@@ -289,12 +313,13 @@
             groupBox2.Controls.Add(cbCedulaMecanico);
             groupBox2.Controls.Add(label14);
             groupBox2.Dock = DockStyle.Top;
-            groupBox2.Location = new Point(0, 170);
+            groupBox2.Location = new Point(0, 164);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1124, 125);
+            groupBox2.Size = new Size(1121, 127);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del mecanico";
+            groupBox2.Enter += groupBox2_Enter;
             // 
             // txtEspecialidad
             // 
@@ -357,7 +382,7 @@
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1124, 170);
+            groupBox1.Size = new Size(1121, 164);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del cliente";
@@ -416,7 +441,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1124, 802);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(1121, 913);
             Controls.Add(panel1);
             Name = "Mantenimiento";
             Text = "Mantenimiento";
@@ -470,5 +496,7 @@
         private Button button1;
         private TextBox textDiagnostico;
         private CheckedListBox checkedListBox1;
+        private TextBox textBox1;
+        private Label label10;
     }
 }

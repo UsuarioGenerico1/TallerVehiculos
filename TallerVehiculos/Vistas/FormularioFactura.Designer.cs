@@ -50,6 +50,8 @@
             label13 = new Label();
             label12 = new Label();
             groupBox2 = new GroupBox();
+            textDiagnostico = new TextBox();
+            label15 = new Label();
             label11 = new Label();
             rtbTrabajos = new RichTextBox();
             dgvServicio = new DataGridView();
@@ -59,6 +61,8 @@
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
+            label16 = new Label();
+            textTotalM = new TextBox();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -275,6 +279,10 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(textTotalM);
+            groupBox2.Controls.Add(label16);
+            groupBox2.Controls.Add(textDiagnostico);
+            groupBox2.Controls.Add(label15);
             groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(rtbTrabajos);
             groupBox2.Controls.Add(dgvServicio);
@@ -292,11 +300,28 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Mantenimiento";
             // 
+            // textDiagnostico
+            // 
+            textDiagnostico.Location = new Point(680, 31);
+            textDiagnostico.Name = "textDiagnostico";
+            textDiagnostico.Size = new Size(457, 34);
+            textDiagnostico.TabIndex = 10;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(574, 42);
+            label15.Name = "label15";
+            label15.Size = new Size(100, 23);
+            label15.TabIndex = 9;
+            label15.Text = "Diagnostico";
+            // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(390, 124);
+            label11.Location = new Point(419, 164);
             label11.Name = "label11";
             label11.Size = new Size(75, 23);
             label11.TabIndex = 8;
@@ -304,7 +329,7 @@
             // 
             // rtbTrabajos
             // 
-            rtbTrabajos.Location = new Point(822, 156);
+            rtbTrabajos.Location = new Point(822, 199);
             rtbTrabajos.Name = "rtbTrabajos";
             rtbTrabajos.Size = new Size(315, 188);
             rtbTrabajos.TabIndex = 7;
@@ -313,28 +338,29 @@
             // dgvServicio
             // 
             dgvServicio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvServicio.Location = new Point(390, 156);
+            dgvServicio.Location = new Point(419, 199);
             dgvServicio.Name = "dgvServicio";
             dgvServicio.RowHeadersWidth = 51;
             dgvServicio.RowTemplate.Height = 29;
-            dgvServicio.Size = new Size(426, 188);
+            dgvServicio.Size = new Size(375, 188);
             dgvServicio.TabIndex = 6;
+            dgvServicio.CellContentClick += dgvServicio_CellContentClick;
             // 
             // dgvTipoMantenimiento
             // 
             dgvTipoMantenimiento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTipoMantenimiento.Location = new Point(12, 156);
+            dgvTipoMantenimiento.Location = new Point(12, 199);
             dgvTipoMantenimiento.Name = "dgvTipoMantenimiento";
             dgvTipoMantenimiento.RowHeadersWidth = 51;
             dgvTipoMantenimiento.RowTemplate.Height = 29;
-            dgvTipoMantenimiento.Size = new Size(372, 188);
+            dgvTipoMantenimiento.Size = new Size(385, 188);
             dgvTipoMantenimiento.TabIndex = 5;
             // 
             // textTipoMantenimiento
             // 
-            textTipoMantenimiento.Location = new Point(12, 116);
+            textTipoMantenimiento.Location = new Point(227, 90);
             textTipoMantenimiento.Name = "textTipoMantenimiento";
-            textTipoMantenimiento.Size = new Size(372, 34);
+            textTipoMantenimiento.Size = new Size(385, 34);
             textTipoMantenimiento.TabIndex = 4;
             // 
             // dateTimePickerF
@@ -349,7 +375,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(822, 116);
+            label10.Location = new Point(822, 167);
             label10.Name = "label10";
             label10.Size = new Size(154, 23);
             label10.TabIndex = 2;
@@ -359,7 +385,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(12, 90);
+            label9.Location = new Point(12, 101);
             label9.Name = "label9";
             label9.Size = new Size(189, 23);
             label9.TabIndex = 1;
@@ -374,6 +400,23 @@
             label8.Size = new Size(200, 23);
             label8.TabIndex = 0;
             label8.Text = "Fecha de Mantenimiento";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(12, 167);
+            label16.Name = "label16";
+            label16.Size = new Size(46, 23);
+            label16.TabIndex = 11;
+            label16.Text = "Total";
+            // 
+            // textTotalM
+            // 
+            textTotalM.Location = new Point(76, 159);
+            textTotalM.Name = "textTotalM";
+            textTotalM.Size = new Size(125, 34);
+            textTotalM.TabIndex = 12;
             // 
             // FormularioFactura
             // 
@@ -430,5 +473,9 @@
         private TextBox textIVA;
         private TextBox textSubTotal;
         private Label label14;
+        private TextBox textDiagnostico;
+        private Label label15;
+        private TextBox textTotalM;
+        private Label label16;
     }
 }

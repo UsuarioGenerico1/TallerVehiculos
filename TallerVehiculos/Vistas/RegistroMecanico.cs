@@ -24,6 +24,7 @@ namespace TallerVehiculos
             if (mecanicoController.Lista_Mecanico != null)
             {
                 dataGridView1.DataSource = mecanicoController.Lista_Mecanico;
+                nombreColumnasDataGrid();
             }
             else
             {
@@ -55,12 +56,23 @@ namespace TallerVehiculos
             try
             {
                 dataGridView1.DataSource = mecanicoController.Lista_Mecanico;
+                nombreColumnasDataGrid();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al obtener los datos" + ex.Message);
             }
+        }
+
+        private void nombreColumnasDataGrid() {
+            dataGridView1.Columns["Cedula1"].HeaderText = "Cedula";
+            dataGridView1.Columns["Nombre1"].HeaderText = "Nombre";
+            dataGridView1.Columns["Appelido1"].HeaderText = "Apellido";
+            dataGridView1.Columns["Direccion1"].HeaderText = "Direccion";
+            dataGridView1.Columns["Especialidad1"].HeaderText = "Especialidad";
+            dataGridView1.Columns["Experiencia1"].HeaderText = "Experiencia";
+            dataGridView1.Columns["ID_Mecanico1"].HeaderText = "ID";
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

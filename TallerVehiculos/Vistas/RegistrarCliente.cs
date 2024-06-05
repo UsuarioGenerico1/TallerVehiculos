@@ -24,6 +24,7 @@ namespace TallerVehiculos
             if (clienteController.Lista_Clientes != null)
             {
                 dataGridView1.DataSource = clienteController.Lista_Clientes;
+                NombreColumnasDataGrid();
             }
             else
             {
@@ -85,12 +86,20 @@ namespace TallerVehiculos
             try
             {
                 dataGridView1.DataSource = clienteController.Lista_Clientes;
-
+                NombreColumnasDataGrid();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al obtener los datos" + ex.Message);
             }
+        }
+        private void NombreColumnasDataGrid() {
+            dataGridView1.Columns["Cedula1"].HeaderText = "Cedula";
+            dataGridView1.Columns["Nombre1"].HeaderText = "Nombre";
+            dataGridView1.Columns["Appelido1"].HeaderText = "Apellido";
+            dataGridView1.Columns["ID_Cliente1"].HeaderText = "ID";
+            dataGridView1.Columns["Correo_Electronico1"].HeaderText = "Correo";
+            dataGridView1.Columns["Fecha_Registro1"].HeaderText = "Fecha";
         }
         public void limpiar()
         {

@@ -16,12 +16,14 @@ namespace TallerVehiculos
     public partial class Mantenimiento : Form
     {
         int indice = 0;
+        int indiceMantenimiento = 0;
         ControladorCliente clienteController;
         ControladorMecanico mecanicoController;
         ControladorServicio servicios;
         ControladorMantenimiento mantenimientoController;
         ControladorVehiculo vehiculoController;
         ControladorRepuesto repuestoController;
+        BindingList<Servicio> serviciosSelecinados;
         internal Mantenimiento(ControladorCliente Controller, ControladorMecanico mecanicoController,
             ControladorServicio servicios, ControladorMantenimiento mantenimiento1, ControladorVehiculo vehiculoController)
         {
@@ -32,8 +34,10 @@ namespace TallerVehiculos
             this.mantenimientoController = mantenimiento1;
             this.vehiculoController = vehiculoController;
             repuestoController = new ControladorRepuesto();
+            serviciosSelecinados = new BindingList<Servicio>();
             llenarDatos();
-            cbTipoMantenimiento.Items.Add("Preventivo");
+
+            cbTipoMantenimiento.Items.Add("Preventivo");//su coste es de $250
             cbTipoMantenimiento.Items.Add("Correctivo");
             cbTipoMantenimiento.Items.Add("(vacio)");
 
@@ -52,7 +56,7 @@ namespace TallerVehiculos
                     indice = i;
                 }
             }
-            
+
         }
         private void cbCedulaMecanico_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -97,7 +101,7 @@ namespace TallerVehiculos
                 for (int i = 0; i < servicios.Lista_Servicio.Count; i++)
                 {
                     checkedListBox1.Items.Add(servicios.Lista_Servicio[i].Nombre_Servicio1);
-                
+
                 }
 
             }
@@ -109,7 +113,8 @@ namespace TallerVehiculos
             guardarDatosMantenimiento();
             guardarDatosServicios();
             guardarDatosVehiculo();
-            FormularioFactura nuevaFactura = new FormularioFactura(clienteController,mantenimientoController,indice);
+            FormularioFactura nuevaFactura = new FormularioFactura(clienteController, mantenimientoController, indice, indiceMantenimiento
+                , serviciosSelecinados, repuestoController);
             nuevaFactura.ShowDialog();
         }
 
@@ -118,7 +123,8 @@ namespace TallerVehiculos
             try
             {
                 DatosMantenimiento nuevoMantenimiento = new DatosMantenimiento();
-                nuevoMantenimiento.Codigo_mantenimiento = mantenimientoController.Lista_Mantenimientos.Count + 1;
+                nuevoMantenimiento.Codigo_mantenimiento = mantenimientoController.Lista_Mantenimientos.Count;
+                indiceMantenimiento = nuevoMantenimiento.Codigo_mantenimiento;
                 nuevoMantenimiento.Fecha_mantenimiento = dateTimePickerM.Value;
                 nuevoMantenimiento.Trabajos_realizados = richTextTrabajos.Text;
                 nuevoMantenimiento.Diagnostico = textDiagnostico.Text;
@@ -137,14 +143,12 @@ namespace TallerVehiculos
         {
             try
             {
-                BindingList<Servicio> serviciosSelecinados = new BindingList<Servicio>();
-
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
                     if (checkedListBox1.CheckedItems[i] != null)
                     {
                         serviciosSelecinados.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
-                        
+
                     }
                     else
                     {
@@ -174,13 +178,25 @@ namespace TallerVehiculos
 
         private void cbTipoMantenimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbTipoMantenimiento.Text== "Preventivo") {
+            if (cbTipoMantenimiento.Text == "Preventivo")
+            {
                 Console.WriteLine("nada");
             }
-            if (cbTipoMantenimiento.Text== "Correctivo") { 
+            if (cbTipoMantenimiento.Text == "Correctivo")
+            {
                 FormularioRepuesto frmRepuestos = new FormularioRepuesto(repuestoController);
                 frmRepuestos.ShowDialog();
             }
+        }
+
+        private void dateTimePickerM_ValueChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(indiceMantenimiento.ToString());
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
