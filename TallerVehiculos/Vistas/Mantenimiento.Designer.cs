@@ -83,23 +83,25 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1121, 913);
+            panel1.Size = new Size(1121, 774);
             panel1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(357, 811);
+            button1.BackColor = SystemColors.Control;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(347, 681);
             button1.Name = "button1";
             button1.Size = new Size(384, 81);
             button1.TabIndex = 6;
             button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // groupBox4
             // 
-            groupBox4.BackColor = SystemColors.Control;
+            groupBox4.BackColor = Color.Khaki;
             groupBox4.Controls.Add(textIVA);
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(checkedListBox1);
@@ -113,111 +115,117 @@
             groupBox4.Controls.Add(label6);
             groupBox4.Controls.Add(label5);
             groupBox4.Dock = DockStyle.Top;
-            groupBox4.Location = new Point(0, 459);
+            groupBox4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox4.Location = new Point(0, 353);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(1121, 331);
+            groupBox4.Size = new Size(1121, 311);
             groupBox4.TabIndex = 0;
             groupBox4.TabStop = false;
             groupBox4.Text = "Datos Mantenimiento";
             // 
             // textIVA
             // 
-            textIVA.Location = new Point(699, 43);
+            textIVA.Location = new Point(764, 41);
             textIVA.Name = "textIVA";
-            textIVA.Size = new Size(314, 27);
+            textIVA.Size = new Size(314, 30);
             textIVA.TabIndex = 13;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(652, 48);
+            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(715, 47);
             label10.Name = "label10";
-            label10.Size = new Size(41, 23);
+            label10.Size = new Size(42, 23);
             label10.TabIndex = 12;
             label10.Text = " IVA";
             // 
             // checkedListBox1
             // 
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(28, 183);
+            checkedListBox1.Location = new Point(28, 151);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(487, 136);
+            checkedListBox1.Size = new Size(371, 154);
             checkedListBox1.TabIndex = 11;
             // 
             // textDiagnostico
             // 
-            textDiagnostico.Location = new Point(699, 94);
+            textDiagnostico.Location = new Point(764, 78);
             textDiagnostico.Name = "textDiagnostico";
-            textDiagnostico.Size = new Size(314, 27);
+            textDiagnostico.Size = new Size(314, 30);
             textDiagnostico.TabIndex = 10;
             // 
             // richTextTrabajos
             // 
-            richTextTrabajos.Location = new Point(604, 183);
+            richTextTrabajos.Location = new Point(652, 151);
             richTextTrabajos.Name = "richTextTrabajos";
-            richTextTrabajos.Size = new Size(409, 136);
+            richTextTrabajos.Size = new Size(409, 154);
             richTextTrabajos.TabIndex = 9;
             richTextTrabajos.Text = "";
             // 
             // dateTimePickerM
             // 
-            dateTimePickerM.Location = new Point(202, 43);
+            dateTimePickerM.Location = new Point(242, 41);
             dateTimePickerM.Name = "dateTimePickerM";
-            dateTimePickerM.Size = new Size(313, 27);
+            dateTimePickerM.Size = new Size(346, 30);
             dateTimePickerM.TabIndex = 8;
             // 
             // cbTipoMantenimiento
             // 
             cbTipoMantenimiento.FormattingEnabled = true;
-            cbTipoMantenimiento.Location = new Point(202, 93);
+            cbTipoMantenimiento.Location = new Point(242, 77);
             cbTipoMantenimiento.Name = "cbTipoMantenimiento";
-            cbTipoMantenimiento.Size = new Size(313, 28);
+            cbTipoMantenimiento.Size = new Size(346, 31);
             cbTipoMantenimiento.TabIndex = 7;
             cbTipoMantenimiento.SelectedIndexChanged += cbTipoMantenimiento_SelectedIndexChanged;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(28, 160);
+            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(28, 128);
             label9.Name = "label9";
-            label9.Size = new Size(67, 20);
+            label9.Size = new Size(81, 23);
             label9.TabIndex = 4;
             label9.Text = "Servicios";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(604, 101);
+            label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(652, 85);
             label8.Name = "label8";
-            label8.Size = new Size(89, 20);
+            label8.Size = new Size(105, 23);
             label8.TabIndex = 3;
             label8.Text = "Diagnostico";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(28, 101);
+            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(30, 85);
             label7.Name = "label7";
-            label7.Size = new Size(165, 20);
+            label7.Size = new Size(199, 23);
             label7.TabIndex = 2;
             label7.Text = "Tipo de mantenimiento";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(604, 160);
+            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(652, 125);
             label6.Name = "label6";
-            label6.Size = new Size(137, 20);
+            label6.Size = new Size(162, 23);
             label6.TabIndex = 1;
             label6.Text = "Trabajos realizados";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(28, 50);
             label5.Name = "label5";
-            label5.Size = new Size(173, 20);
+            label5.Size = new Size(208, 23);
             label5.TabIndex = 0;
             label5.Text = "Fecha de mantenimiento";
             // 
@@ -232,37 +240,37 @@
             groupBox3.Controls.Add(label2);
             groupBox3.Controls.Add(label1);
             groupBox3.Dock = DockStyle.Top;
-            groupBox3.Location = new Point(0, 291);
+            groupBox3.Location = new Point(0, 224);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1121, 168);
+            groupBox3.Size = new Size(1121, 129);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Datos del vehiculo";
             // 
             // textColor
             // 
-            textColor.Location = new Point(469, 83);
+            textColor.Location = new Point(491, 75);
             textColor.Name = "textColor";
-            textColor.Size = new Size(280, 27);
+            textColor.Size = new Size(275, 27);
             textColor.TabIndex = 7;
             // 
             // textModelo
             // 
-            textModelo.Location = new Point(79, 83);
+            textModelo.Location = new Point(96, 75);
             textModelo.Name = "textModelo";
             textModelo.Size = new Size(269, 27);
             textModelo.TabIndex = 6;
             // 
             // textMarca
             // 
-            textMarca.Location = new Point(469, 43);
+            textMarca.Location = new Point(491, 42);
             textMarca.Name = "textMarca";
-            textMarca.Size = new Size(280, 27);
+            textMarca.Size = new Size(275, 27);
             textMarca.TabIndex = 5;
             // 
             // textPlaca
             // 
-            textPlaca.Location = new Point(79, 43);
+            textPlaca.Location = new Point(96, 42);
             textPlaca.Name = "textPlaca";
             textPlaca.Size = new Size(269, 27);
             textPlaca.TabIndex = 4;
@@ -270,36 +278,40 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(413, 90);
+            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(425, 79);
             label4.Name = "label4";
-            label4.Size = new Size(45, 20);
+            label4.Size = new Size(53, 23);
             label4.TabIndex = 3;
             label4.Text = "Color";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 90);
+            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(30, 79);
             label3.Name = "label3";
-            label3.Size = new Size(61, 20);
+            label3.Size = new Size(71, 23);
             label3.TabIndex = 2;
             label3.Text = "Modelo";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(413, 50);
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(419, 46);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(59, 23);
             label2.TabIndex = 1;
             label2.Text = "Marca";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 50);
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(28, 46);
             label1.Name = "label1";
-            label1.Size = new Size(44, 20);
+            label1.Size = new Size(51, 23);
             label1.TabIndex = 0;
             label1.Text = "Placa";
             // 
@@ -312,49 +324,51 @@
             groupBox2.Controls.Add(cbCedulaMecanico);
             groupBox2.Controls.Add(label14);
             groupBox2.Dock = DockStyle.Top;
-            groupBox2.Location = new Point(0, 164);
+            groupBox2.Location = new Point(0, 113);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1121, 127);
+            groupBox2.Size = new Size(1121, 111);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del mecanico";
             // 
             // txtEspecialidad
             // 
-            txtEspecialidad.Location = new Point(501, 77);
+            txtEspecialidad.Location = new Point(486, 65);
             txtEspecialidad.Name = "txtEspecialidad";
-            txtEspecialidad.Size = new Size(260, 27);
+            txtEspecialidad.Size = new Size(275, 27);
             txtEspecialidad.TabIndex = 5;
             // 
             // txtNombreMecanico
             // 
-            txtNombreMecanico.Location = new Point(501, 35);
+            txtNombreMecanico.Location = new Point(486, 32);
             txtNombreMecanico.Name = "txtNombreMecanico";
-            txtNombreMecanico.Size = new Size(260, 27);
+            txtNombreMecanico.Size = new Size(275, 27);
             txtNombreMecanico.TabIndex = 4;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(402, 84);
+            label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(369, 69);
             label16.Name = "label16";
-            label16.Size = new Size(93, 20);
+            label16.Size = new Size(109, 23);
             label16.TabIndex = 3;
             label16.Text = "Especialidad";
             // 
             // label15
             // 
             label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label15.Location = new Point(402, 36);
             label15.Name = "label15";
-            label15.Size = new Size(64, 20);
+            label15.Size = new Size(76, 23);
             label15.TabIndex = 2;
             label15.Text = "Nombre";
             // 
             // cbCedulaMecanico
             // 
             cbCedulaMecanico.FormattingEnabled = true;
-            cbCedulaMecanico.Location = new Point(108, 31);
+            cbCedulaMecanico.Location = new Point(108, 34);
             cbCedulaMecanico.Name = "cbCedulaMecanico";
             cbCedulaMecanico.Size = new Size(226, 28);
             cbCedulaMecanico.TabIndex = 1;
@@ -363,9 +377,10 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(16, 39);
+            label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(30, 39);
             label14.Name = "label14";
-            label14.Size = new Size(55, 20);
+            label14.Size = new Size(65, 23);
             label14.TabIndex = 0;
             label14.Text = "Cedula";
             // 
@@ -380,7 +395,7 @@
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1121, 164);
+            groupBox1.Size = new Size(1121, 113);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del cliente";
@@ -388,15 +403,16 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(28, 107);
+            label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(28, 78);
             label13.Name = "label13";
-            label13.Size = new Size(132, 20);
+            label13.Size = new Size(157, 23);
             label13.TabIndex = 6;
             label13.Text = "Correo Electronico";
             // 
             // txtCorreoCliente
             // 
-            txtCorreoCliente.Location = new Point(196, 100);
+            txtCorreoCliente.Location = new Point(196, 74);
             txtCorreoCliente.Name = "txtCorreoCliente";
             txtCorreoCliente.Size = new Size(565, 27);
             txtCorreoCliente.TabIndex = 5;
@@ -411,18 +427,20 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(398, 47);
+            label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(402, 45);
             label12.Name = "label12";
-            label12.Size = new Size(64, 20);
+            label12.Size = new Size(76, 23);
             label12.TabIndex = 3;
             label12.Text = "Nombre";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(23, 48);
+            label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(28, 47);
             label11.Name = "label11";
-            label11.Size = new Size(55, 20);
+            label11.Size = new Size(65, 23);
             label11.TabIndex = 2;
             label11.Text = "Cedula";
             // 
@@ -439,8 +457,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(1121, 913);
+            BackColor = Color.Khaki;
+            ClientSize = new Size(1121, 774);
             Controls.Add(panel1);
             Name = "Mantenimiento";
             Text = "Mantenimiento";

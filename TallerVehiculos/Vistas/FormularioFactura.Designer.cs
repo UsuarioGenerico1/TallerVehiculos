@@ -50,6 +50,8 @@
             label13 = new Label();
             label12 = new Label();
             groupBox2 = new GroupBox();
+            textTotalM = new TextBox();
+            label16 = new Label();
             textDiagnostico = new TextBox();
             label15 = new Label();
             label11 = new Label();
@@ -61,8 +63,6 @@
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
-            label16 = new Label();
-            textTotalM = new TextBox();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -82,16 +82,16 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1178, 867);
+            flowLayoutPanel1.Size = new Size(1178, 800);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(295, 54);
+            label1.Size = new Size(315, 54);
             label1.TabIndex = 0;
             label1.Text = "Taller Mecanico";
             // 
@@ -152,10 +152,10 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label6.Location = new Point(23, 178);
             label6.Name = "label6";
-            label6.Size = new Size(151, 23);
+            label6.Size = new Size(157, 23);
             label6.TabIndex = 6;
             label6.Text = "Correo Electronico";
             // 
@@ -186,30 +186,30 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location = new Point(25, 142);
             label5.Name = "label5";
-            label5.Size = new Size(72, 23);
+            label5.Size = new Size(78, 23);
             label5.TabIndex = 2;
             label5.Text = "Apellido";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(24, 100);
             label4.Name = "label4";
-            label4.Size = new Size(73, 23);
+            label4.Size = new Size(76, 23);
             label4.TabIndex = 1;
             label4.Text = "Nombre";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(25, 58);
             label3.Name = "label3";
-            label3.Size = new Size(63, 23);
+            label3.Size = new Size(65, 23);
             label3.TabIndex = 0;
             label3.Text = "Cedula";
             // 
@@ -221,7 +221,7 @@
             groupBox3.Controls.Add(label14);
             groupBox3.Controls.Add(label13);
             groupBox3.Controls.Add(label12);
-            groupBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox3.Location = new Point(598, 3);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(565, 245);
@@ -238,7 +238,7 @@
             // 
             // textIVA
             // 
-            textIVA.Location = new Point(159, 89);
+            textIVA.Location = new Point(159, 88);
             textIVA.Name = "textIVA";
             textIVA.Size = new Size(194, 30);
             textIVA.TabIndex = 4;
@@ -253,27 +253,30 @@
             // label14
             // 
             label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label14.Location = new Point(32, 135);
             label14.Name = "label14";
-            label14.Size = new Size(109, 23);
+            label14.Size = new Size(115, 23);
             label14.TabIndex = 2;
             label14.Text = "Total a pagar";
             // 
             // label13
             // 
             label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label13.Location = new Point(32, 95);
             label13.Name = "label13";
-            label13.Size = new Size(55, 23);
+            label13.Size = new Size(57, 23);
             label13.TabIndex = 1;
             label13.Text = "IVA %";
             // 
             // label12
             // 
             label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label12.Location = new Point(32, 52);
             label12.Name = "label12";
-            label12.Size = new Size(74, 23);
+            label12.Size = new Size(79, 23);
             label12.TabIndex = 0;
             label12.Text = "Subtotal";
             // 
@@ -295,14 +298,31 @@
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(3, 387);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1175, 421);
+            groupBox2.Size = new Size(1175, 381);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Mantenimiento";
             // 
+            // textTotalM
+            // 
+            textTotalM.Location = new Point(76, 112);
+            textTotalM.Name = "textTotalM";
+            textTotalM.Size = new Size(125, 34);
+            textTotalM.TabIndex = 12;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(12, 120);
+            label16.Name = "label16";
+            label16.Size = new Size(49, 23);
+            label16.TabIndex = 11;
+            label16.Text = "Total";
+            // 
             // textDiagnostico
             // 
-            textDiagnostico.Location = new Point(680, 31);
+            textDiagnostico.Location = new Point(685, 34);
             textDiagnostico.Name = "textDiagnostico";
             textDiagnostico.Size = new Size(457, 34);
             textDiagnostico.TabIndex = 10;
@@ -310,26 +330,26 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label15.Location = new Point(574, 42);
             label15.Name = "label15";
-            label15.Size = new Size(100, 23);
+            label15.Size = new Size(105, 23);
             label15.TabIndex = 9;
             label15.Text = "Diagnostico";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(419, 164);
+            label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(419, 117);
             label11.Name = "label11";
-            label11.Size = new Size(75, 23);
+            label11.Size = new Size(81, 23);
             label11.TabIndex = 8;
             label11.Text = "Servicios";
             // 
             // rtbTrabajos
             // 
-            rtbTrabajos.Location = new Point(822, 199);
+            rtbTrabajos.Location = new Point(822, 152);
             rtbTrabajos.Name = "rtbTrabajos";
             rtbTrabajos.Size = new Size(315, 188);
             rtbTrabajos.TabIndex = 7;
@@ -338,7 +358,7 @@
             // dgvServicio
             // 
             dgvServicio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvServicio.Location = new Point(419, 199);
+            dgvServicio.Location = new Point(419, 152);
             dgvServicio.Name = "dgvServicio";
             dgvServicio.RowHeadersWidth = 51;
             dgvServicio.RowTemplate.Height = 29;
@@ -349,7 +369,7 @@
             // dgvTipoMantenimiento
             // 
             dgvTipoMantenimiento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTipoMantenimiento.Location = new Point(12, 199);
+            dgvTipoMantenimiento.Location = new Point(12, 152);
             dgvTipoMantenimiento.Name = "dgvTipoMantenimiento";
             dgvTipoMantenimiento.RowHeadersWidth = 51;
             dgvTipoMantenimiento.RowTemplate.Height = 29;
@@ -358,9 +378,9 @@
             // 
             // textTipoMantenimiento
             // 
-            textTipoMantenimiento.Location = new Point(227, 90);
+            textTipoMantenimiento.Location = new Point(227, 73);
             textTipoMantenimiento.Name = "textTipoMantenimiento";
-            textTipoMantenimiento.Size = new Size(385, 34);
+            textTipoMantenimiento.Size = new Size(309, 34);
             textTipoMantenimiento.TabIndex = 4;
             // 
             // dateTimePickerF
@@ -374,55 +394,39 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(822, 167);
+            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(822, 120);
             label10.Name = "label10";
-            label10.Size = new Size(154, 23);
+            label10.Size = new Size(162, 23);
             label10.TabIndex = 2;
             label10.Text = "Trabajos realizados";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(12, 101);
+            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(12, 81);
             label9.Name = "label9";
-            label9.Size = new Size(189, 23);
+            label9.Size = new Size(199, 23);
             label9.TabIndex = 1;
             label9.Text = "Tipo de Mantenimiento";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label8.Location = new Point(12, 43);
             label8.Name = "label8";
-            label8.Size = new Size(200, 23);
+            label8.Size = new Size(208, 23);
             label8.TabIndex = 0;
             label8.Text = "Fecha de Mantenimiento";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(12, 167);
-            label16.Name = "label16";
-            label16.Size = new Size(46, 23);
-            label16.TabIndex = 11;
-            label16.Text = "Total";
-            // 
-            // textTotalM
-            // 
-            textTotalM.Location = new Point(76, 159);
-            textTotalM.Name = "textTotalM";
-            textTotalM.Size = new Size(125, 34);
-            textTotalM.TabIndex = 12;
             // 
             // FormularioFactura
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1178, 867);
+            BackColor = Color.Khaki;
+            ClientSize = new Size(1178, 800);
             Controls.Add(flowLayoutPanel1);
             Name = "FormularioFactura";
             Text = "FormularioFactura";

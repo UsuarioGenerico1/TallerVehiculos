@@ -36,56 +36,71 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Nirmala UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 9);
+            label1.Location = new Point(218, 9);
             label1.Name = "label1";
             label1.Size = new Size(369, 62);
             label1.TabIndex = 0;
             label1.Text = "Taller Mecanico";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Click += label1_Click;
             // 
             // btn_rg_cliente
             // 
-            btn_rg_cliente.Location = new Point(434, 335);
+            btn_rg_cliente.BackColor = SystemColors.Control;
+            btn_rg_cliente.FlatStyle = FlatStyle.Flat;
+            btn_rg_cliente.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_rg_cliente.ForeColor = SystemColors.ControlText;
+            btn_rg_cliente.Location = new Point(127, 74);
             btn_rg_cliente.Name = "btn_rg_cliente";
-            btn_rg_cliente.Size = new Size(437, 66);
+            btn_rg_cliente.Size = new Size(535, 115);
             btn_rg_cliente.TabIndex = 1;
             btn_rg_cliente.Text = "Registar Cliente";
-            btn_rg_cliente.UseVisualStyleBackColor = true;
+            btn_rg_cliente.UseVisualStyleBackColor = false;
             btn_rg_cliente.Click += btn_rg_cliente_Click;
             // 
             // btn_rg_mecanico
             // 
-            btn_rg_mecanico.Location = new Point(434, 258);
+            btn_rg_mecanico.BackColor = SystemColors.Control;
+            btn_rg_mecanico.FlatStyle = FlatStyle.Flat;
+            btn_rg_mecanico.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_rg_mecanico.ForeColor = SystemColors.ControlText;
+            btn_rg_mecanico.Location = new Point(127, 195);
             btn_rg_mecanico.Name = "btn_rg_mecanico";
-            btn_rg_mecanico.Size = new Size(437, 71);
+            btn_rg_mecanico.Size = new Size(535, 115);
             btn_rg_mecanico.TabIndex = 2;
             btn_rg_mecanico.Text = "Registar Mecanico";
-            btn_rg_mecanico.UseVisualStyleBackColor = true;
+            btn_rg_mecanico.UseVisualStyleBackColor = false;
             btn_rg_mecanico.Click += btn_rg_mecanico_Click;
             // 
             // btn_gr_mantenimiento
             // 
-            btn_gr_mantenimiento.Location = new Point(434, 170);
+            btn_gr_mantenimiento.BackColor = SystemColors.Control;
+            btn_gr_mantenimiento.FlatStyle = FlatStyle.Flat;
+            btn_gr_mantenimiento.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_gr_mantenimiento.ForeColor = SystemColors.ControlText;
+            btn_gr_mantenimiento.Location = new Point(127, 316);
             btn_gr_mantenimiento.Name = "btn_gr_mantenimiento";
-            btn_gr_mantenimiento.Size = new Size(437, 82);
+            btn_gr_mantenimiento.Size = new Size(535, 115);
             btn_gr_mantenimiento.TabIndex = 3;
             btn_gr_mantenimiento.Text = "Registrar Mantenimiento";
-            btn_gr_mantenimiento.UseVisualStyleBackColor = true;
+            btn_gr_mantenimiento.UseVisualStyleBackColor = false;
             btn_gr_mantenimiento.Click += btn_gr_mantenimiento_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1262, 673);
+            BackColor = Color.Khaki;
+            ClientSize = new Size(782, 600);
             Controls.Add(btn_gr_mantenimiento);
+            Controls.Add(label1);
             Controls.Add(btn_rg_mecanico);
             Controls.Add(btn_rg_cliente);
-            Controls.Add(label1);
             Name = "Form1";
             Text = " Taller Mecanico";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }

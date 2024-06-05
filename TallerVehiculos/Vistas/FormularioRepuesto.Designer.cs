@@ -54,31 +54,37 @@
             groupBox1.Size = new Size(776, 426);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Repuestos";
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(563, 101);
+            btnEliminar.BackColor = SystemColors.Control;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminar.Location = new Point(635, 64);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(102, 52);
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(563, 53);
+            btnGuardar.BackColor = SystemColors.Control;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardar.Location = new Point(509, 64);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.Size = new Size(102, 52);
             btnGuardar.TabIndex = 5;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // dataGridViewR
             // 
             dataGridViewR.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewR.Location = new Point(23, 211);
+            dataGridViewR.Location = new Point(23, 139);
             dataGridViewR.Name = "dataGridViewR";
             dataGridViewR.RowHeadersWidth = 51;
             dataGridViewR.RowTemplate.Height = 29;
@@ -87,7 +93,7 @@
             // 
             // textPrecio
             // 
-            textPrecio.Location = new Point(180, 103);
+            textPrecio.Location = new Point(180, 94);
             textPrecio.Name = "textPrecio";
             textPrecio.Size = new Size(277, 27);
             textPrecio.TabIndex = 3;
@@ -102,18 +108,20 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(103, 110);
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(115, 98);
             label2.Name = "label2";
-            label2.Size = new Size(50, 20);
+            label2.Size = new Size(59, 23);
             label2.TabIndex = 1;
             label2.Text = "Precio";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(23, 64);
             label1.Name = "label1";
-            label1.Size = new Size(130, 20);
+            label1.Size = new Size(155, 23);
             label1.TabIndex = 0;
             label1.Text = "Nombre Repuesto";
             // 
@@ -121,7 +129,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Khaki;
+            ClientSize = new Size(800, 377);
             Controls.Add(groupBox1);
             Name = "FormularioRepuesto";
             Text = "FormularioRepuesto";
