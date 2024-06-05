@@ -15,7 +15,6 @@ namespace TallerVehiculos
     public partial class RegistrarCliente : Form
     {
         ControladorCliente clienteController;
-        private bool banderaNuevo = true;
         int index = -1;
         internal RegistrarCliente(ControladorCliente Controller)
         {
@@ -36,17 +35,25 @@ namespace TallerVehiculos
         {
             Cliente nuevoCliente = new Cliente();
 
-            nuevoCliente.ID_Cliente1 = clienteController.Lista_Clientes.Count + 1;
+            
+            if (string.IsNullOrEmpty(textCedula.Text)
+                || string.IsNullOrEmpty(textNombre.Text)
+                || string.IsNullOrEmpty(textApellido.Text)
+                || string.IsNullOrEmpty(textCorreo.Text))
+            {
+                MessageBox.Show("Los campos no pueden estar vacios");
+                return;
+            }
 
+            nuevoCliente.ID_Cliente1 = clienteController.Lista_Clientes.Count + 1;
             nuevoCliente.Cedula1 = textCedula.Text;
             nuevoCliente.Nombre1 = textNombre.Text;
             nuevoCliente.Appelido1 = textApellido.Text;
             nuevoCliente.Correo_Electronico1 = textCorreo.Text;
             nuevoCliente.Fecha_Registro1 = dateTimePicker1.Value;
-
             clienteController.agregarCliente(nuevoCliente);
 
-            MessageBox.Show("datos registrados");
+            MessageBox.Show("Datos registrados");
 
             GetDataCliente();
             limpiar();

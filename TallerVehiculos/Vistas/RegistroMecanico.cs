@@ -36,8 +36,18 @@ namespace TallerVehiculos
         {
             Mecanico nuevoMecanico = new Mecanico();
 
-            nuevoMecanico.ID_Mecanico1 = mecanicoController.Lista_Mecanico.Count + 1;
+            if (string.IsNullOrEmpty(textCedula.Text)
+                || string.IsNullOrEmpty(textNombre.Text)
+                || string.IsNullOrEmpty(textApellido.Text)
+                || string.IsNullOrEmpty(textDireccion.Text)
+                || string.IsNullOrEmpty(textEspecialidad.Text)
+                || string.IsNullOrEmpty(textExp.Text))
+            {
+                MessageBox.Show("Los campos no pueden estar vacios");
+                return;
+            }
 
+            nuevoMecanico.ID_Mecanico1 = mecanicoController.Lista_Mecanico.Count + 1;
             nuevoMecanico.Cedula1 = textCedula.Text;
             nuevoMecanico.Nombre1 = textNombre.Text;
             nuevoMecanico.Appelido1 = textApellido.Text;

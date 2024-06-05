@@ -35,18 +35,18 @@ namespace TallerVehiculos.Controlador
             Lista_Servicio.Add(servicio3);
 
             Servicio servicio4 = new Servicio();
-            servicio3.Nombre_Servicio1 = "Cambio de pastillas de freno";
-            servicio3.Precio1 = 100;
+            servicio4.Nombre_Servicio1 = "Cambio de pastillas de freno";
+            servicio4.Precio1 = 100;
             Lista_Servicio.Add(servicio4);
 
             Servicio servicio5 = new Servicio();
-            servicio3.Nombre_Servicio1 = "Cambio de filtro";
-            servicio3.Precio1 = 50;
+            servicio5.Nombre_Servicio1 = "Cambio de filtro";
+            servicio5.Precio1 = 50;
             Lista_Servicio.Add(servicio5);
 
             Servicio servicio6 = new Servicio();
-            servicio3.Nombre_Servicio1 = "Ninguno";
-            servicio3.Precio1 = 0;
+            servicio6.Nombre_Servicio1 = "Ninguno";
+            servicio6.Precio1 = 0;
             Lista_Servicio.Add(servicio6);
         }
 

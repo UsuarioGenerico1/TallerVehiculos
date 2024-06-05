@@ -20,8 +20,9 @@ namespace TallerVehiculos.Vistas
         ControladorRepuesto repuestoController;
         int indice;
         int indiceMantenimiento;
+        int IVA;
         internal FormularioFactura(ControladorCliente clienteController, ControladorMantenimiento mantenimientoController,
-            int indice, int indiceMantenimiento, BindingList<Servicio> serviciosSelecinados, ControladorRepuesto repuestoController)
+            int indice, int indiceMantenimiento, BindingList<Servicio> serviciosSelecinados, ControladorRepuesto repuestoController, int IVA)
         {
             InitializeComponent();
             this.clienteController = clienteController;
@@ -30,6 +31,8 @@ namespace TallerVehiculos.Vistas
             this.indiceMantenimiento = indiceMantenimiento;
             this.serviciosSelecinados = serviciosSelecinados;
             this.repuestoController = repuestoController;
+            this.IVA=IVA;
+            
             asignarDatosCliente();
             asignarDatosMantenimiento();
             asignarDatosServicios();
@@ -38,28 +41,36 @@ namespace TallerVehiculos.Vistas
 
         public void asignarDatosCliente()
         {
-            //  for (int i = 0; i < clienteController.Lista_Clientes.Count; i++) { }
-            string valor = mantenimientoController.Lista_Mantenimientos[indice].ReferenciaCliente;
-            textCedula.Text = clienteController.buscarCliente(valor).Cedula1;
-            textNombre.Text = clienteController.buscarCliente(valor).Nombre1;
-            textApellido.Text = clienteController.buscarCliente(valor).Appelido1;
-            textCorreo.Text = clienteController.buscarCliente(valor).Correo_Electronico1;
+            try
+            {
+                string valor = mantenimientoController.Lista_Mantenimientos[indice].ReferenciaCliente;
+                textCedula.Text = clienteController.buscarCliente(valor).Cedula1;
+                textNombre.Text = clienteController.buscarCliente(valor).Nombre1;
+                textApellido.Text = clienteController.buscarCliente(valor).Appelido1;
+                textCorreo.Text = clienteController.buscarCliente(valor).Correo_Electronico1;
+            }
+            catch(Exception ex){ MessageBox.Show("Error durante La asignacion de Datos" + ex.Message); }
+            
         }
 
         public void asignarDatosMantenimiento()
         {
-            dateTimePickerF.Value = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Fecha_mantenimiento;
-            textTipoMantenimiento.Text = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Tipo_mantenimiento;
-            rtbTrabajos.Text = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Trabajos_realizados;
-            textDiagnostico.Text = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Diagnostico;
-            textTotalM.Text = CalculoRepuesto().ToString();
-            textSubTotal.Text = (calculoServicios()+calculoServicios()).ToString();
-            textTotal.Text = calculoTotal().ToString();
+            try
+            {
+                dateTimePickerF.Value = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Fecha_mantenimiento;
+                textTipoMantenimiento.Text = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Tipo_mantenimiento;
+                rtbTrabajos.Text = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Trabajos_realizados;
+                textDiagnostico.Text = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Diagnostico;
+                textTotalM.Text = CalculoRepuesto().ToString();
+                textSubTotal.Text = (calculoServicios() + CalculoRepuesto()).ToString();
+                textTotal.Text = calculoTotal().ToString();
+                textIVA.Text = IVA.ToString();
+            }
+            catch(ArgumentOutOfRangeException ex){ MessageBox.Show("Error durante La asignacion de Datos" + ex.Message); }     
         }
 
         public void asignarDatosServicios()
         {
-
             if (serviciosSelecinados == null)
             {
                 dgvServicio.DataSource = null;
@@ -69,7 +80,6 @@ namespace TallerVehiculos.Vistas
                 dgvServicio.DataSource = serviciosSelecinados;
                 nombreColumnasDataGridServicios();
             }
-
 
         }
 
@@ -101,8 +111,11 @@ namespace TallerVehiculos.Vistas
         public double calculoTotal()
         {
             double total = 0;
+            if (IVA==0) {
+                IVA = 14;
+            }
 
-            total = (calculoServicios() + CalculoRepuesto()) * 0.14;
+            total = (calculoServicios() + CalculoRepuesto()) * (IVA/100);
             total += (calculoServicios() + CalculoRepuesto());
 
             return  total;

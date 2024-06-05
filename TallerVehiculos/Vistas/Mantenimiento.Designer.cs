@@ -31,7 +31,7 @@
             panel1 = new Panel();
             button1 = new Button();
             groupBox4 = new GroupBox();
-            textBox1 = new TextBox();
+            textIVA = new TextBox();
             label10 = new Label();
             checkedListBox1 = new CheckedListBox();
             textDiagnostico = new TextBox();
@@ -89,7 +89,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(334, 777);
+            button1.Location = new Point(357, 811);
             button1.Name = "button1";
             button1.Size = new Size(384, 81);
             button1.TabIndex = 6;
@@ -100,7 +100,7 @@
             // groupBox4
             // 
             groupBox4.BackColor = SystemColors.Control;
-            groupBox4.Controls.Add(textBox1);
+            groupBox4.Controls.Add(textIVA);
             groupBox4.Controls.Add(label10);
             groupBox4.Controls.Add(checkedListBox1);
             groupBox4.Controls.Add(textDiagnostico);
@@ -120,12 +120,12 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Datos Mantenimiento";
             // 
-            // textBox1
+            // textIVA
             // 
-            textBox1.Location = new Point(699, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(314, 27);
-            textBox1.TabIndex = 13;
+            textIVA.Location = new Point(699, 43);
+            textIVA.Name = "textIVA";
+            textIVA.Size = new Size(314, 27);
+            textIVA.TabIndex = 13;
             // 
             // label10
             // 
@@ -166,7 +166,6 @@
             dateTimePickerM.Name = "dateTimePickerM";
             dateTimePickerM.Size = new Size(313, 27);
             dateTimePickerM.TabIndex = 8;
-            dateTimePickerM.ValueChanged += dateTimePickerM_ValueChanged;
             // 
             // cbTipoMantenimiento
             // 
@@ -319,7 +318,6 @@
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del mecanico";
-            groupBox2.Enter += groupBox2_Enter;
             // 
             // txtEspecialidad
             // 
@@ -496,7 +494,7 @@
         private Button button1;
         private TextBox textDiagnostico;
         private CheckedListBox checkedListBox1;
-        private TextBox textBox1;
+        private TextBox textIVA;
         private Label label10;
     }
 }

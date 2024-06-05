@@ -17,6 +17,7 @@ namespace TallerVehiculos
     {
         int indice = 0;
         int indiceMantenimiento = 0;
+        int IVA = 0;
         ControladorCliente clienteController;
         ControladorMecanico mecanicoController;
         ControladorServicio servicios;
@@ -36,7 +37,7 @@ namespace TallerVehiculos
             repuestoController = new ControladorRepuesto();
             serviciosSelecinados = new BindingList<Servicio>();
             llenarDatos();
-
+            textIVA.Text = "14";
             cbTipoMantenimiento.Items.Add("Preventivo");//su coste es de $250
             cbTipoMantenimiento.Items.Add("Correctivo");
             cbTipoMantenimiento.Items.Add("(vacio)");
@@ -110,11 +111,19 @@ namespace TallerVehiculos
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(cbCedula.Text)
+                || string.IsNullOrEmpty(cbCedulaMecanico.Text)
+                ||string.IsNullOrEmpty(cbTipoMantenimiento.Text))
+            {
+                MessageBox.Show("Ingrese Los datos antes de continuar");
+                return;
+            }
+
             guardarDatosMantenimiento();
             guardarDatosServicios();
             guardarDatosVehiculo();
             FormularioFactura nuevaFactura = new FormularioFactura(clienteController, mantenimientoController, indice, indiceMantenimiento
-                , serviciosSelecinados, repuestoController);
+                , serviciosSelecinados, repuestoController,IVA);
             nuevaFactura.ShowDialog();
         }
 
@@ -135,7 +144,10 @@ namespace TallerVehiculos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error valores no pueden ser null" + ex.Message);
+                MessageBox.Show("Los campos de cedula o tipo de mantenimiento no han sido " +
+                    "llenados por favor ingrese datos"+ex.Message);
+                return;
+                
             }
         }
 
@@ -148,19 +160,12 @@ namespace TallerVehiculos
                     if (checkedListBox1.CheckedItems[i] != null)
                     {
                         serviciosSelecinados.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
-
                     }
-                    else
-                    {
-                        Console.WriteLine("no hay valores");
-                    }
-
-                    //MessageBox.Show(serviciosSelecinados[i].Nombre_Servicio1+ " " + serviciosSelecinados[i].Precio1.ToString());
                 }
             }
-            catch (Exception ex)
+            catch (ArgumentNullException ex)
             {
-                MessageBox.Show("error valores no pueden ser null " + ex.Message);
+                Console.WriteLine("los valores nulos no se estan contando");
             }
 
         }
@@ -187,16 +192,6 @@ namespace TallerVehiculos
                 FormularioRepuesto frmRepuestos = new FormularioRepuesto(repuestoController);
                 frmRepuestos.ShowDialog();
             }
-        }
-
-        private void dateTimePickerM_ValueChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show(indiceMantenimiento.ToString());
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
