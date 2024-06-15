@@ -63,6 +63,9 @@
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            textTotalServicios = new TextBox();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -82,7 +85,7 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1178, 800);
+            flowLayoutPanel1.Size = new Size(1178, 950);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -282,6 +285,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(textTotalServicios);
+            groupBox2.Controls.Add(label18);
+            groupBox2.Controls.Add(label17);
             groupBox2.Controls.Add(textTotalM);
             groupBox2.Controls.Add(label16);
             groupBox2.Controls.Add(textDiagnostico);
@@ -305,7 +311,7 @@
             // 
             // textTotalM
             // 
-            textTotalM.Location = new Point(76, 112);
+            textTotalM.Location = new Point(58, 343);
             textTotalM.Name = "textTotalM";
             textTotalM.Size = new Size(125, 34);
             textTotalM.TabIndex = 12;
@@ -314,7 +320,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(12, 120);
+            label16.Location = new Point(12, 354);
             label16.Name = "label16";
             label16.Size = new Size(49, 23);
             label16.TabIndex = 11;
@@ -341,7 +347,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(419, 117);
+            label11.Location = new Point(419, 120);
             label11.Name = "label11";
             label11.Size = new Size(81, 23);
             label11.TabIndex = 8;
@@ -421,12 +427,39 @@
             label8.TabIndex = 0;
             label8.Text = "Fecha de Mantenimiento";
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Location = new Point(12, 120);
+            label17.Name = "label17";
+            label17.Size = new Size(150, 23);
+            label17.TabIndex = 13;
+            label17.Text = "Repuestos usados";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Location = new Point(419, 343);
+            label18.Name = "label18";
+            label18.Size = new Size(49, 23);
+            label18.TabIndex = 14;
+            label18.Text = "Total";
+            // 
+            // textTotalServicios
+            // 
+            textTotalServicios.Location = new Point(474, 343);
+            textTotalServicios.Name = "textTotalServicios";
+            textTotalServicios.Size = new Size(125, 34);
+            textTotalServicios.TabIndex = 15;
+            // 
             // FormularioFactura
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
-            ClientSize = new Size(1178, 800);
+            ClientSize = new Size(1178, 950);
             Controls.Add(flowLayoutPanel1);
             Name = "FormularioFactura";
             Text = "FormularioFactura";
@@ -481,5 +514,8 @@
         private Label label15;
         private TextBox textTotalM;
         private Label label16;
+        private Label label17;
+        private TextBox textTotalServicios;
+        private Label label18;
     }
 }

@@ -11,10 +11,11 @@ namespace TallerVehiculos.Controlador
     internal class ControladorServicio
     {
         public BindingList<Servicio> Lista_Servicio { get; set; }
-
+        public BindingList<Servicio> Lista_ServicioSeleccionado { get; set; }   
         public ControladorServicio()
         {
             Lista_Servicio = new BindingList<Servicio>();
+            Lista_ServicioSeleccionado = new BindingList<Servicio> ();
             serviciosPrincipales();
         }
 

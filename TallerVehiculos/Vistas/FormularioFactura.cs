@@ -111,7 +111,7 @@ namespace TallerVehiculos.Vistas
         }
         public double calculoTotal()
         {
-            double total = 0;
+            double total;
             if (IVA==0) {
                 IVA = 14;
             }
