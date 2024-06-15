@@ -86,11 +86,12 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(1082, 218);
             dataGridView1.TabIndex = 16;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // btnEliminar
             // 
             btnEliminar.BackColor = SystemColors.Control;
+            btnEliminar.Enabled = false;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.Location = new Point(703, 174);
@@ -117,9 +118,10 @@
             // btnActualizar
             // 
             btnActualizar.BackColor = SystemColors.Control;
+            btnActualizar.Enabled = false;
             btnActualizar.FlatStyle = FlatStyle.Flat;
             btnActualizar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnActualizar.Location = new Point(703, 117);
+            btnActualizar.Location = new Point(703, 119);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(128, 51);
             btnActualizar.TabIndex = 12;

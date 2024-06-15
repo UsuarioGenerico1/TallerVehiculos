@@ -21,9 +21,9 @@ namespace TallerVehiculos
         {
             InitializeComponent();
             this.mecanicoController = Controller;
-            if (mecanicoController.Lista_Mecanico != null)
+            if (mecanicoController.getMecanico() != null)
             {
-                dataGridView1.DataSource = mecanicoController.Lista_Mecanico;
+                dataGridView1.DataSource = mecanicoController.getMecanico();
                 nombreColumnasDataGrid();
             }
             else
@@ -47,7 +47,7 @@ namespace TallerVehiculos
                 return;
             }
 
-            nuevoMecanico.ID_Mecanico1 = mecanicoController.Lista_Mecanico.Count + 1;
+            nuevoMecanico.ID_Mecanico1 = mecanicoController.getMecanico().Count + 1;
             nuevoMecanico.Cedula1 = textCedula.Text;
             nuevoMecanico.Nombre1 = textNombre.Text;
             nuevoMecanico.Appelido1 = textApellido.Text;
@@ -65,7 +65,7 @@ namespace TallerVehiculos
         {
             try
             {
-                dataGridView1.DataSource = mecanicoController.Lista_Mecanico;
+                dataGridView1.DataSource = mecanicoController.getMecanico();
                 nombreColumnasDataGrid();
 
             }
@@ -75,7 +75,8 @@ namespace TallerVehiculos
             }
         }
 
-        private void nombreColumnasDataGrid() {
+        private void nombreColumnasDataGrid()
+        {
             dataGridView1.Columns["Cedula1"].HeaderText = "Cedula";
             dataGridView1.Columns["Nombre1"].HeaderText = "Nombre";
             dataGridView1.Columns["Appelido1"].HeaderText = "Apellido";
@@ -89,15 +90,18 @@ namespace TallerVehiculos
         {
             if (index >= 0)
             {
-                Mecanico selectMecanico = mecanicoController.Lista_Mecanico[index];
+                Mecanico selectMecanico = mecanicoController.getMecanico()[index];
                 selectMecanico.Cedula1 = textCedula.Text;
                 selectMecanico.Nombre1 = textNombre.Text;
                 selectMecanico.Appelido1 = textApellido.Text;
                 selectMecanico.Direccion1 = textDireccion.Text;
                 selectMecanico.Especialidad1 = textEspecialidad.Text;
                 selectMecanico.Experiencia1 = textExp.Text;
-                mecanicoController.Lista_Mecanico.ResetItem(index);
+                mecanicoController.getMecanico().ResetItem(index);             
             }
+            btnEliminar.Enabled = false;
+            btnActualizar.Enabled = false;
+            btnGuardar.Enabled = true;
             MessageBox.Show("los datos se han actualizado");
             limpiar();
         }
@@ -111,19 +115,29 @@ namespace TallerVehiculos
             textEspecialidad.Text = string.Empty;
             textExp.Text = string.Empty;
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            index = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[index];
-
-            textCedula.Text = row.Cells[4].Value.ToString();
-            textNombre.Text = row.Cells[5].Value.ToString();
-            textApellido.Text = row.Cells[6].Value.ToString();
-            textDireccion.Text = row.Cells[1].Value.ToString();
-            textEspecialidad.Text = row.Cells[2].Value.ToString();
-            textExp.Text = row.Cells[3].Value.ToString();
-
+            try
+            {
+                index = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[index];
+                textCedula.Text = row.Cells[4].Value.ToString();
+                textNombre.Text = row.Cells[5].Value.ToString();
+                textApellido.Text = row.Cells[6].Value.ToString();
+                textDireccion.Text = row.Cells[1].Value.ToString();
+                textEspecialidad.Text = row.Cells[2].Value.ToString();
+                textExp.Text = row.Cells[3].Value.ToString();
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("No hay datos " + ex.Message);
+                btnEliminar.Enabled = false;
+                btnActualizar.Enabled = false;
+                btnGuardar.Enabled = true;
+            }        
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -134,13 +148,15 @@ namespace TallerVehiculos
             {
                 if (index >= 0)
                 {
-
-                    mecanicoController.Lista_Mecanico.RemoveAt(index);
+                    mecanicoController.eliminarMecanico(index);
                     index = -1;
                     limpiar();
                 }
+                btnEliminar.Enabled = false;
+                btnActualizar.Enabled = false;
+                btnGuardar.Enabled = true;
                 MessageBox.Show("los datos se han borrado");
             }
-        }
+        }     
     }
 }

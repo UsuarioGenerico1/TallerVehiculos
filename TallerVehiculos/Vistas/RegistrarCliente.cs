@@ -20,9 +20,9 @@ namespace TallerVehiculos
         {
             InitializeComponent();
             this.clienteController = Controller;
-            if (clienteController.Lista_Clientes != null)
+            if (clienteController.getCliente() != null)
             {
-                dataGridView1.DataSource = clienteController.Lista_Clientes;
+                dataGridView1.DataSource = clienteController.getCliente();
                 NombreColumnasDataGrid();
             }
             else
@@ -35,7 +35,7 @@ namespace TallerVehiculos
         {
             Cliente nuevoCliente = new Cliente();
 
-            
+
             if (string.IsNullOrEmpty(textCedula.Text)
                 || string.IsNullOrEmpty(textNombre.Text)
                 || string.IsNullOrEmpty(textApellido.Text)
@@ -45,7 +45,7 @@ namespace TallerVehiculos
                 return;
             }
 
-            nuevoCliente.ID_Cliente1 = clienteController.Lista_Clientes.Count + 1;
+            nuevoCliente.ID_Cliente1 = clienteController.getCliente().Count + 1;
             nuevoCliente.Cedula1 = textCedula.Text;
             nuevoCliente.Nombre1 = textNombre.Text;
             nuevoCliente.Appelido1 = textApellido.Text;
@@ -59,17 +59,31 @@ namespace TallerVehiculos
             limpiar();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CelltClick(object sender, DataGridViewCellEventArgs e)
         {
-            index = e.RowIndex;
-            DataGridViewRow row = dataGridView1.Rows[index];
+            try
+            {   
+                index = e.RowIndex;
+                DataGridViewRow row = dataGridView1.Rows[index];
 
-            textCedula.Text = row.Cells[3].Value.ToString();
-            textNombre.Text = row.Cells[4].Value.ToString();
-            textApellido.Text = row.Cells[5].Value.ToString();
-            textCorreo.Text = row.Cells[1].Value.ToString();
-            dateTimePicker1.Value = Convert.ToDateTime(row.Cells[2].Value);
+                textCedula.Text = row.Cells[3].Value.ToString();
+                textNombre.Text = row.Cells[4].Value.ToString();
+                textApellido.Text = row.Cells[5].Value.ToString();
+                textCorreo.Text = row.Cells[1].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(row.Cells[2].Value);
 
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                btnGuardar.Enabled = false;
+                
+            }
+            catch(Exception ex) {
+                MessageBox.Show("No hay datos "+ex.Message);
+                btnEliminar.Enabled = false;
+                btnActualizar.Enabled = false; 
+                btnGuardar.Enabled = true;
+            }
+            
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -77,14 +91,18 @@ namespace TallerVehiculos
 
             if (index >= 0)
             {
-                Cliente selectCliente = clienteController.Lista_Clientes[index];
+                Cliente selectCliente = clienteController.getCliente()[index];
                 selectCliente.Cedula1 = textCedula.Text;
                 selectCliente.Nombre1 = textNombre.Text;
                 selectCliente.Appelido1 = textApellido.Text;
                 selectCliente.Correo_Electronico1 = textCorreo.Text;
                 selectCliente.Fecha_Registro1 = dateTimePicker1.Value;
-                clienteController.Lista_Clientes.ResetItem(index);
+                clienteController.getCliente().ResetItem(index);
+                
             }
+            btnEliminar.Enabled = false;
+            btnActualizar.Enabled = false;
+            btnGuardar.Enabled = true;
             MessageBox.Show("los datos se han actualizado");
             limpiar();
         }
@@ -92,7 +110,7 @@ namespace TallerVehiculos
         {
             try
             {
-                dataGridView1.DataSource = clienteController.Lista_Clientes;
+                dataGridView1.DataSource = clienteController.getCliente();
                 NombreColumnasDataGrid();
             }
             catch (Exception ex)
@@ -100,7 +118,8 @@ namespace TallerVehiculos
                 MessageBox.Show("Error al obtener los datos" + ex.Message);
             }
         }
-        private void NombreColumnasDataGrid() {
+        private void NombreColumnasDataGrid()
+        {
             dataGridView1.Columns["Cedula1"].HeaderText = "Cedula";
             dataGridView1.Columns["Nombre1"].HeaderText = "Nombre";
             dataGridView1.Columns["Appelido1"].HeaderText = "Apellido";
@@ -120,18 +139,21 @@ namespace TallerVehiculos
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult r;
-            r = MessageBox.Show("Esta seguro que quiere eliminar los datos","Eliminar Datos",MessageBoxButtons.YesNo);
-            if (r==DialogResult.Yes) {
+            r = MessageBox.Show("Esta seguro que desea ELIMINAR los datos", "Eliminar Datos", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
                 if (index >= 0)
                 {
 
-                    clienteController.Lista_Clientes.RemoveAt(index);
+                    clienteController.eliminarCliente(index);
                     index = -1;
                     limpiar();
                 }
+                btnEliminar.Enabled = false;
+                btnActualizar.Enabled = false;
+                btnGuardar.Enabled = true;
                 MessageBox.Show("los datos se han borrado");
             }
-            
         }
     }
 }

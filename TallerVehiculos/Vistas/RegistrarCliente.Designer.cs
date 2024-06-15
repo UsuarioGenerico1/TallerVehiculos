@@ -32,7 +32,7 @@
             dataGridView1 = new DataGridView();
             btnEliminar = new Button();
             btnGuardar = new Button();
-            btnNuevo = new Button();
+            btnActualizar = new Button();
             dateTimePicker1 = new DateTimePicker();
             textCorreo = new TextBox();
             textApellido = new TextBox();
@@ -53,7 +53,7 @@
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(btnEliminar);
             groupBox1.Controls.Add(btnGuardar);
-            groupBox1.Controls.Add(btnNuevo);
+            groupBox1.Controls.Add(btnActualizar);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(textCorreo);
             groupBox1.Controls.Add(textApellido);
@@ -81,11 +81,12 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(938, 230);
             dataGridView1.TabIndex = 14;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CelltClick;
             // 
             // btnEliminar
             // 
             btnEliminar.BackColor = SystemColors.Control;
+            btnEliminar.Enabled = false;
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.ForeColor = SystemColors.ControlText;
@@ -111,19 +112,20 @@
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // btnNuevo
+            // btnActualizar
             // 
-            btnNuevo.BackColor = SystemColors.Control;
-            btnNuevo.FlatStyle = FlatStyle.Flat;
-            btnNuevo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNuevo.ForeColor = SystemColors.ControlText;
-            btnNuevo.Location = new Point(710, 99);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(144, 40);
-            btnNuevo.TabIndex = 10;
-            btnNuevo.Text = "Actualizar";
-            btnNuevo.UseVisualStyleBackColor = false;
-            btnNuevo.Click += btnActualizar_Click;
+            btnActualizar.BackColor = SystemColors.Control;
+            btnActualizar.Enabled = false;
+            btnActualizar.FlatStyle = FlatStyle.Flat;
+            btnActualizar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            btnActualizar.ForeColor = SystemColors.ControlText;
+            btnActualizar.Location = new Point(710, 99);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(144, 40);
+            btnActualizar.TabIndex = 10;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // dateTimePicker1
             // 
@@ -243,7 +245,7 @@
         private DateTimePicker dateTimePicker1;
         private TextBox textCorreo;
         private TextBox textApellido;
-        private Button btnNuevo;
+        private Button btnActualizar;
         private DataGridView dataGridView1;
         private Button btnEliminar;
         private Button btnGuardar;

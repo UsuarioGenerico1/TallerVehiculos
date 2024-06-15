@@ -37,10 +37,5 @@ namespace TallerVehiculos.Controlador
             return buscarMantenimiento;
         }
 
-       
-
-        //repuestos , servicios , tipo de mantenimiento
-
-
     }
 }

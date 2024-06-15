@@ -10,7 +10,7 @@ namespace TallerVehiculos.Controlador
 {
     internal class ControladorMecanico
     {
-        public BindingList<Mecanico> Lista_Mecanico { get; set;}
+        private BindingList<Mecanico> Lista_Mecanico { get; set; }
 
         public ControladorMecanico() {
             Lista_Mecanico = new BindingList<Mecanico>();
@@ -19,19 +19,13 @@ namespace TallerVehiculos.Controlador
             Lista_Mecanico.Add(mecanico);
         }
 
-        public void modificarMecanico(Mecanico mecanico)
+        public BindingList<Mecanico> getMecanico()
         {
-            for (int i = 0; i < Lista_Mecanico.Count; i++)
-            {
+            return Lista_Mecanico;
+        }
 
-                if (Lista_Mecanico[i].Cedula1 == mecanico.Cedula1)
-                {
-                    Lista_Mecanico[i] = mecanico;
-                    break;
-                }
-
-            }
-
+        public void eliminarMecanico(int indice) { 
+            Lista_Mecanico.RemoveAt(indice);
         }
 
     }

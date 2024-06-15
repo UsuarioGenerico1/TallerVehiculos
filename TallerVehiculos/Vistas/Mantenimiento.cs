@@ -48,12 +48,12 @@ namespace TallerVehiculos
         {
             int i;
 
-            for (i = 0; i < clienteController.Lista_Clientes.Count; i++)
+            for (i = 0; i < clienteController.getCliente().Count; i++)
             {
-                if (cbCedula.SelectedItem.ToString() == clienteController.Lista_Clientes[i].Cedula1)
+                if (cbCedula.SelectedItem.ToString() == clienteController.getCliente()[i].Cedula1)
                 {
-                    txtNombreCliente.Text = clienteController.Lista_Clientes[i].Nombre1;
-                    txtCorreoCliente.Text = clienteController.Lista_Clientes[i].Correo_Electronico1;
+                    txtNombreCliente.Text = clienteController.getCliente()[i].Nombre1;
+                    txtCorreoCliente.Text = clienteController.getCliente()[i].Correo_Electronico1;
                     indice = i;
                 }
             }
@@ -61,23 +61,23 @@ namespace TallerVehiculos
         }
         private void cbCedulaMecanico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < mecanicoController.Lista_Mecanico.Count; i++)
+            for (int i = 0; i < mecanicoController.getMecanico().Count; i++)
             {
-                if (cbCedulaMecanico.SelectedItem.ToString() == mecanicoController.Lista_Mecanico[i].Cedula1)
+                if (cbCedulaMecanico.SelectedItem.ToString() == mecanicoController.getMecanico()[i].Cedula1)
                 {
-                    txtNombreMecanico.Text = mecanicoController.Lista_Mecanico[i].Nombre1;
-                    txtEspecialidad.Text = mecanicoController.Lista_Mecanico[i].Especialidad1;
+                    txtNombreMecanico.Text = mecanicoController.getMecanico()[i].Nombre1;
+                    txtEspecialidad.Text = mecanicoController.getMecanico()[i].Especialidad1;
                 }
             }
         }
 
         public void llenarDatos()
         {
-            if (clienteController.Lista_Clientes != null)
+            if (clienteController.getCliente() != null)
             {
-                for (int i = 0; i < clienteController.Lista_Clientes.Count; i++)
+                for (int i = 0; i < clienteController.getCliente().Count; i++)
                 {
-                    cbCedula.Items.Add(clienteController.Lista_Clientes[i].Cedula1);
+                    cbCedula.Items.Add(clienteController.getCliente()[i].Cedula1);
                 }
             }
             else
@@ -85,11 +85,11 @@ namespace TallerVehiculos
                 Console.WriteLine("no hay datos");
             }
             //datos del mecanico
-            if (mecanicoController.Lista_Mecanico != null)
+            if (mecanicoController.getMecanico() != null)
             {
-                for (int i = 0; i < mecanicoController.Lista_Mecanico.Count; i++)
+                for (int i = 0; i < mecanicoController.getMecanico().Count; i++)
                 {
-                    cbCedulaMecanico.Items.Add(mecanicoController.Lista_Mecanico[i].Cedula1);
+                    cbCedulaMecanico.Items.Add(mecanicoController.getMecanico()[i].Cedula1);
                 }
             }
             else
@@ -160,11 +160,13 @@ namespace TallerVehiculos
                     if (checkedListBox1.CheckedItems[i] != null)
                     {
                         serviciosSelecinados.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
+
                     }
                 }
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
+                
                 Console.WriteLine("los valores nulos no se estan contando");
             }
 

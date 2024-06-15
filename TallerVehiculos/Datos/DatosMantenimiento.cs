@@ -18,12 +18,12 @@ namespace TallerVehiculos.Datos
         string referenciaCliente;
         string referenciaMecanico;
         public DatosMantenimiento() {
-            Codigo_mantenimiento = 0;
-            Diagnostico = string.Empty;
-            Trabajos_realizados = string.Empty;
-            Tipo_mantenimiento = string.Empty;
-            ReferenciaCliente = string.Empty;
-            ReferenciaMecanico = string.Empty;  
+            codigo_mantenimiento = 0;
+            diagnostico = string.Empty;
+            trabajos_realizados = string.Empty;
+            tipo_mantenimiento = string.Empty;
+            referenciaCliente = string.Empty; 
+            
         }
 
         
@@ -35,7 +35,6 @@ namespace TallerVehiculos.Datos
         public string Tipo_mantenimiento { get => tipo_mantenimiento; set => tipo_mantenimiento = value; }
         public string ReferenciaCliente { get => referenciaCliente; set => referenciaCliente = value; }
         public string ReferenciaMecanico { get => referenciaMecanico; set => referenciaMecanico = value; }
-
         
     }
 }

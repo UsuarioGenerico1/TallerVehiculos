@@ -32,7 +32,7 @@ namespace TallerVehiculos.Vistas
             this.serviciosSelecinados = serviciosSelecinados;
             this.repuestoController = repuestoController;
             this.IVA=IVA;
-            
+           
             asignarDatosCliente();
             asignarDatosMantenimiento();
             asignarDatosServicios();
@@ -77,6 +77,7 @@ namespace TallerVehiculos.Vistas
                 nombreColumnasDataGridServicios();
             }
             else {
+
                 dgvServicio.DataSource = serviciosSelecinados;
                 nombreColumnasDataGridServicios();
             }
