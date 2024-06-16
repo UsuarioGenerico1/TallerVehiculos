@@ -20,9 +20,9 @@ namespace TallerVehiculos.Vistas
             InitializeComponent();
             this.repuestoController = repuestoController;
 
-            if (repuestoController.Lista_Repuestos != null)
+            if (repuestoController.getRepuesto() != null)
             {
-                dataGridViewR.DataSource = repuestoController.Lista_Repuestos;
+                dataGridViewR.DataSource = repuestoController.getRepuesto();
             }
             else
             {
@@ -33,7 +33,7 @@ namespace TallerVehiculos.Vistas
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Repuesto nuevoRepuesto = new Repuesto();
-            nuevoRepuesto.ID_Repuesto1 = repuestoController.Lista_Repuestos.Count + 1;
+            nuevoRepuesto.ID_Repuesto1 = repuestoController.getRepuesto().Count + 1;
             nuevoRepuesto.Nombre_Respuesto1 = textRepuesto.Text;
             nuevoRepuesto.Precio1 = Convert.ToDouble(textPrecio.Text);
             repuestoController.agregarRepuesto(nuevoRepuesto);
@@ -47,7 +47,7 @@ namespace TallerVehiculos.Vistas
         {
             try
             {
-                dataGridViewR.DataSource = repuestoController.Lista_Repuestos;
+                dataGridViewR.DataSource = repuestoController.getRepuesto();
             }
             catch (Exception ex)
             {

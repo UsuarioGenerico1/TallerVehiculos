@@ -10,7 +10,7 @@ namespace TallerVehiculos.Controlador
 {
     internal class ControladorMantenimiento
     {
-        public BindingList<DatosMantenimiento> Lista_Mantenimientos { get; set; }
+        private BindingList<DatosMantenimiento> Lista_Mantenimientos { get; set; }
 
         public ControladorMantenimiento() {
             Lista_Mantenimientos = new BindingList<DatosMantenimiento>();
@@ -20,6 +20,11 @@ namespace TallerVehiculos.Controlador
         public void agrearMantenimiento(DatosMantenimiento mantenimiento) { 
             Lista_Mantenimientos.Add(mantenimiento);    
         }
+        public BindingList<DatosMantenimiento> getMantenimiento()
+        {
+            return Lista_Mantenimientos;
+        }
+
 
         public DatosMantenimiento buscarMantenimiento(int mantenimiento)
         {

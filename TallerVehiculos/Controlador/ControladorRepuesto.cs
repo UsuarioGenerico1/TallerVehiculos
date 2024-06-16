@@ -10,7 +10,7 @@ namespace TallerVehiculos.Controlador
 {
     internal class ControladorRepuesto
     {
-        public BindingList<Repuesto> Lista_Repuestos { get; set; }
+        private BindingList<Repuesto> Lista_Repuestos { get; set; }
         public ControladorRepuesto() { 
             Lista_Repuestos = new BindingList<Repuesto>();
         }
@@ -19,6 +19,11 @@ namespace TallerVehiculos.Controlador
         {
             Lista_Repuestos.Add(repuesto);
 
+        }
+
+        public BindingList<Repuesto> getRepuesto()
+        {
+            return Lista_Repuestos;
         }
     }
 }

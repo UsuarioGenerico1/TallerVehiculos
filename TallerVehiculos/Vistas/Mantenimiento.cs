@@ -132,7 +132,7 @@ namespace TallerVehiculos
             try
             {
                 DatosMantenimiento nuevoMantenimiento = new DatosMantenimiento();
-                nuevoMantenimiento.Codigo_mantenimiento = mantenimientoController.Lista_Mantenimientos.Count;
+                nuevoMantenimiento.Codigo_mantenimiento = mantenimientoController.getMantenimiento().Count;
                 indiceMantenimiento = nuevoMantenimiento.Codigo_mantenimiento;
                 nuevoMantenimiento.Fecha_mantenimiento = dateTimePickerM.Value;
                 nuevoMantenimiento.Trabajos_realizados = richTextTrabajos.Text;

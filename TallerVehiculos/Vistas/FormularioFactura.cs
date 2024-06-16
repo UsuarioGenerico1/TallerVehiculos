@@ -47,7 +47,7 @@ namespace TallerVehiculos.Vistas
         {
             try
             {
-                string valor = mantenimientoController.Lista_Mantenimientos[indice].ReferenciaCliente;
+                string valor = mantenimientoController.getMantenimiento()[indice].ReferenciaCliente;
                 textCedula.Text = clienteController.buscarCliente(valor).Cedula1;
                 textNombre.Text = clienteController.buscarCliente(valor).Nombre1;
                 textApellido.Text = clienteController.buscarCliente(valor).Appelido1;
@@ -64,8 +64,6 @@ namespace TallerVehiculos.Vistas
                 textModelo.Text = vehiculoController.buscarVehiculo(indiceMantenimiento).Modelo1;
                 textColor.Text = vehiculoController.buscarVehiculo(indiceMantenimiento).Color1;
                 textMarca.Text = vehiculoController.buscarVehiculo(indiceMantenimiento).Marca1;
-
-
             }
             catch (Exception ex)
             {
@@ -105,13 +103,13 @@ namespace TallerVehiculos.Vistas
         }
 
         public void asignarDatosRepuestos() {
-            if (repuestoController.Lista_Repuestos == null)
+            if (repuestoController.getRepuesto() == null)
             {
                 dgvTipoMantenimiento.DataSource = null;
                 nombreColumnasDataGridRepuestos();
             }
             else {
-                dgvTipoMantenimiento.DataSource = repuestoController.Lista_Repuestos;
+                dgvTipoMantenimiento.DataSource = repuestoController.getRepuesto();
                 nombreColumnasDataGridRepuestos();
             }
         
@@ -161,15 +159,15 @@ namespace TallerVehiculos.Vistas
         public double CalculoRepuesto()
         {     
             double sumaRepuestos = 0;
-            if (repuestoController.Lista_Repuestos == null)
+            if (repuestoController.getRepuesto() == null)
             {
                 sumaRepuestos = 150;
             }
             else
             {
-                for (int i = 0; i < repuestoController.Lista_Repuestos.Count; i++)
+                for (int i = 0; i < repuestoController.getRepuesto().Count; i++)
                 {
-                    sumaRepuestos += repuestoController.Lista_Repuestos[i].Precio1;
+                    sumaRepuestos += repuestoController.getRepuesto()[i].Precio1;
                 }
             }        
             return sumaRepuestos;
