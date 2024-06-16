@@ -10,13 +10,31 @@ namespace TallerVehiculos.Controlador
 {
     internal class ControladorServicio
     {
-        public BindingList<Servicio> Lista_Servicio { get; set; }
-        public BindingList<Servicio> Lista_ServicioSeleccionado { get; set; }   
+        private BindingList<Servicio> Lista_Servicio { get; set; }
+        private BindingList<Servicio> Lista_ServicioSeleccionado { get; set; }
         public ControladorServicio()
         {
             Lista_Servicio = new BindingList<Servicio>();
-            Lista_ServicioSeleccionado = new BindingList<Servicio> ();
+            Lista_ServicioSeleccionado = new BindingList<Servicio>();
             serviciosPrincipales();
+        }
+
+        public BindingList<Servicio> getServicios()
+        {
+            return Lista_Servicio;
+        }
+
+        public BindingList<Servicio> getServicioSelect()
+        {
+            return Lista_ServicioSeleccionado;
+        }
+        public void agregarServicioSeleccionado(Servicio servicio)
+        {
+            Lista_ServicioSeleccionado.Add(servicio);
+
+        }
+        public void eliminarServicioSeleccionado (int indice){
+            Lista_ServicioSeleccionado.RemoveAt(indice);
         }
 
         public void serviciosPrincipales(){
@@ -67,6 +85,22 @@ namespace TallerVehiculos.Controlador
                 {
                     servicioGuardado.Nombre_Servicio1 = Lista_Servicio[i].Nombre_Servicio1;
                     servicioGuardado.Precio1= Lista_Servicio[i].Precio1;  
+                }
+            }
+            return servicioGuardado;
+        }
+
+
+        public Servicio buscarServicio2(int id)
+        {
+            Servicio servicioGuardado = new Servicio();
+
+            for (int i = 0; i < Lista_Servicio.Count; i++)
+            {
+                if (Lista_Servicio[i].ID_Servicio1 == id)
+                {
+                    servicioGuardado.Nombre_Servicio1 = Lista_Servicio[i].Nombre_Servicio1;
+                    servicioGuardado.Precio1 = Lista_Servicio[i].Precio1;
                 }
             }
             return servicioGuardado;

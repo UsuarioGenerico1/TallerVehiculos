@@ -16,27 +16,31 @@ namespace TallerVehiculos.Vistas
     {
         ControladorCliente clienteController;
         ControladorMantenimiento mantenimientoController;
-        BindingList<Servicio> serviciosSelecinados;
+       
         ControladorRepuesto repuestoController;
+        ControladorVehiculo vehiculoController;
+        ControladorServicio servicios;
         int indice;
         int indiceMantenimiento;
         int IVA;
         internal FormularioFactura(ControladorCliente clienteController, ControladorMantenimiento mantenimientoController,
-            int indice, int indiceMantenimiento, BindingList<Servicio> serviciosSelecinados, ControladorRepuesto repuestoController, int IVA)
+            int indice, int indiceMantenimiento, ControladorRepuesto repuestoController, int IVA,
+            ControladorVehiculo vehiculoController, ControladorServicio servicios)
         {
             InitializeComponent();
             this.clienteController = clienteController;
             this.mantenimientoController = mantenimientoController;
             this.indice = indice;
             this.indiceMantenimiento = indiceMantenimiento;
-            this.serviciosSelecinados = serviciosSelecinados;
             this.repuestoController = repuestoController;
             this.IVA=IVA;
-           
+            this.vehiculoController = vehiculoController;
+            this.servicios = servicios;
             asignarDatosCliente();
             asignarDatosMantenimiento();
             asignarDatosServicios();
             asignarDatosRepuestos();
+            asignarDatosVehiculos();
         }
 
         public void asignarDatosCliente()
@@ -52,7 +56,23 @@ namespace TallerVehiculos.Vistas
             catch(Exception ex){ MessageBox.Show("Error durante La asignacion de Datos" + ex.Message); }
             
         }
+        public void asignarDatosVehiculos()
+        {
+            try
+            {
+                textPlaca.Text = vehiculoController.buscarVehiculo(indiceMantenimiento).Placa1;
+                textModelo.Text = vehiculoController.buscarVehiculo(indiceMantenimiento).Modelo1;
+                textColor.Text = vehiculoController.buscarVehiculo(indiceMantenimiento).Color1;
+                textMarca.Text = vehiculoController.buscarVehiculo(indiceMantenimiento).Marca1;
 
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error en asignar datos "+ex.Message);
+            }
+
+        }
         public void asignarDatosMantenimiento()
         {
             try
@@ -65,20 +85,20 @@ namespace TallerVehiculos.Vistas
                 textSubTotal.Text = (calculoServicios() + CalculoRepuesto()).ToString();
                 textTotal.Text = calculoTotal().ToString();
                 textIVA.Text = IVA.ToString();
+                textTotalServicios.Text = calculoServicios().ToString();    
             }
             catch(ArgumentOutOfRangeException ex){ MessageBox.Show("Error durante La asignacion de Datos" + ex.Message); }     
         }
 
         public void asignarDatosServicios()
         {
-            if (serviciosSelecinados == null)
+            if (servicios.getServicioSelect() == null)
             {
                 dgvServicio.DataSource = null;
                 nombreColumnasDataGridServicios();
             }
             else {
-
-                dgvServicio.DataSource = serviciosSelecinados;
+                dgvServicio.DataSource = servicios.getServicioSelect();
                 nombreColumnasDataGridServicios();
             }
 
@@ -125,14 +145,14 @@ namespace TallerVehiculos.Vistas
         public double calculoServicios()
         {
             double sumaServicios = 0;
-            if (serviciosSelecinados == null)
+            if (servicios.getServicioSelect() == null)
             {
                 sumaServicios = 0;
             }
             else {
-                for (int i = 0; i < serviciosSelecinados.Count; i++)
+                for (int i = 0; i < servicios.getServicioSelect().Count; i++)
                 {
-                    sumaServicios += serviciosSelecinados[i].Precio1;
+                    sumaServicios += servicios.getServicioSelect()[i].Precio1;
                 }
             }
             return sumaServicios;

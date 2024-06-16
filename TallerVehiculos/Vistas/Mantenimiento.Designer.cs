@@ -142,11 +142,13 @@
             // 
             // checkedListBox1
             // 
+            checkedListBox1.CheckOnClick = true;
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Location = new Point(28, 151);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(371, 154);
             checkedListBox1.TabIndex = 11;
+            checkedListBox1.ItemCheck += checkedListBox1_ItemCheck;
             // 
             // textDiagnostico
             // 

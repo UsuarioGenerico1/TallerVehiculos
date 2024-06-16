@@ -24,7 +24,7 @@ namespace TallerVehiculos
         ControladorMantenimiento mantenimientoController;
         ControladorVehiculo vehiculoController;
         ControladorRepuesto repuestoController;
-        BindingList<Servicio> serviciosSelecinados;
+
         internal Mantenimiento(ControladorCliente Controller, ControladorMecanico mecanicoController,
             ControladorServicio servicios, ControladorMantenimiento mantenimiento1, ControladorVehiculo vehiculoController)
         {
@@ -35,7 +35,7 @@ namespace TallerVehiculos
             this.mantenimientoController = mantenimiento1;
             this.vehiculoController = vehiculoController;
             repuestoController = new ControladorRepuesto();
-            serviciosSelecinados = new BindingList<Servicio>();
+
             llenarDatos();
             textIVA.Text = "14";
             cbTipoMantenimiento.Items.Add("Preventivo");//su coste es de $250
@@ -97,11 +97,11 @@ namespace TallerVehiculos
                 Console.WriteLine("no hay datos");
             }
             //Datos Servicios
-            if (servicios.Lista_Servicio != null)
+            if (servicios.getServicios() != null)
             {
-                for (int i = 0; i < servicios.Lista_Servicio.Count; i++)
+                for (int i = 0; i < servicios.getServicios().Count; i++)
                 {
-                    checkedListBox1.Items.Add(servicios.Lista_Servicio[i].Nombre_Servicio1);
+                    checkedListBox1.Items.Add(servicios.getServicios()[i].Nombre_Servicio1);
 
                 }
 
@@ -113,17 +113,17 @@ namespace TallerVehiculos
         {
             if (string.IsNullOrEmpty(cbCedula.Text)
                 || string.IsNullOrEmpty(cbCedulaMecanico.Text)
-                ||string.IsNullOrEmpty(cbTipoMantenimiento.Text))
+                || string.IsNullOrEmpty(cbTipoMantenimiento.Text))
             {
                 MessageBox.Show("Ingrese Los datos antes de continuar");
                 return;
             }
 
             guardarDatosMantenimiento();
-            guardarDatosServicios();
+            //guardarDatosServicios();
             guardarDatosVehiculo();
             FormularioFactura nuevaFactura = new FormularioFactura(clienteController, mantenimientoController, indice, indiceMantenimiento
-                , serviciosSelecinados, repuestoController,IVA);
+                , repuestoController, IVA, vehiculoController, servicios);
             nuevaFactura.ShowDialog();
         }
 
@@ -145,9 +145,9 @@ namespace TallerVehiculos
             catch (Exception ex)
             {
                 MessageBox.Show("Los campos de cedula o tipo de mantenimiento no han sido " +
-                    "llenados por favor ingrese datos"+ex.Message);
+                    "llenados por favor ingrese datos" + ex.Message);
                 return;
-                
+
             }
         }
 
@@ -159,14 +159,15 @@ namespace TallerVehiculos
                 {
                     if (checkedListBox1.CheckedItems[i] != null)
                     {
-                        serviciosSelecinados.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
-
+                        // serviciosSelecinados1.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
+                        servicios.agregarServicioSeleccionado(servicios.buscarServicio2(checkedListBox1.CheckedIndices[i]));
                     }
-                }
+                }            
+
             }
             catch (Exception ex)
             {
-                
+
                 Console.WriteLine("los valores nulos no se estan contando");
             }
 
@@ -175,7 +176,7 @@ namespace TallerVehiculos
         public void guardarDatosVehiculo()
         {
             Vehiculo nuevoVehiculo = new Vehiculo();
-            nuevoVehiculo.ID_Vehiculo1 = vehiculoController.Lista_vehiculo.Count + 1;
+            nuevoVehiculo.ID_Vehiculo1 = vehiculoController.GetVehiculos().Count;
             nuevoVehiculo.Placa1 = textPlaca.Text;
             nuevoVehiculo.Marca1 = textMarca.Text;
             nuevoVehiculo.Modelo1 = textModelo.Text;
@@ -194,6 +195,19 @@ namespace TallerVehiculos
                 FormularioRepuesto frmRepuestos = new FormularioRepuesto(repuestoController);
                 frmRepuestos.ShowDialog();
             }
+        }
+
+        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue==CheckState.Checked)
+            {
+                servicios.agregarServicioSeleccionado(servicios.buscarServicio2(e.Index));
+
+            }
+            if (e.NewValue==CheckState.Unchecked)
+            {
+                servicios.eliminarServicioSeleccionado(e.Index);
+            }        
         }
     }
 }
