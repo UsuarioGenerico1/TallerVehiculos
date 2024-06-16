@@ -37,7 +37,7 @@ namespace TallerVehiculos
             repuestoController = new ControladorRepuesto();
 
             llenarDatos();
-            textIVA.Text = "14";
+            textIVA.Text = "15";
             cbTipoMantenimiento.Items.Add("Preventivo");//su coste es de $250
             cbTipoMantenimiento.Items.Add("Correctivo");
             cbTipoMantenimiento.Items.Add("(vacio)");
@@ -122,6 +122,7 @@ namespace TallerVehiculos
             guardarDatosMantenimiento();
             //guardarDatosServicios();
             guardarDatosVehiculo();
+            IVA = Convert.ToInt32(textIVA.Text);
             FormularioFactura nuevaFactura = new FormularioFactura(clienteController, mantenimientoController, indice, indiceMantenimiento
                 , repuestoController, IVA, vehiculoController, servicios);
             nuevaFactura.ShowDialog();
@@ -141,6 +142,7 @@ namespace TallerVehiculos
                 nuevoMantenimiento.ReferenciaCliente = cbCedula.SelectedItem.ToString();
                 nuevoMantenimiento.ReferenciaMecanico = cbCedulaMecanico.SelectedItem.ToString();
                 mantenimientoController.agrearMantenimiento(nuevoMantenimiento);
+
             }
             catch (Exception ex)
             {
@@ -162,7 +164,7 @@ namespace TallerVehiculos
                         // serviciosSelecinados1.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
                         servicios.agregarServicioSeleccionado(servicios.buscarServicio2(checkedListBox1.CheckedIndices[i]));
                     }
-                }            
+                }
 
             }
             catch (Exception ex)
@@ -199,15 +201,35 @@ namespace TallerVehiculos
 
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (e.NewValue==CheckState.Checked)
+            if (e.NewValue == CheckState.Checked)
             {
                 servicios.agregarServicioSeleccionado(servicios.buscarServicio2(e.Index));
 
             }
-            if (e.NewValue==CheckState.Unchecked)
+            if (e.NewValue == CheckState.Unchecked)
             {
                 servicios.eliminarServicioSeleccionado(e.Index);
-            }        
+            }
+        }
+
+        private void textIVA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingrese solo numeros");
+               
+            }
+            if (textIVA.Text.Length>=2)
+            {
+                e.Handled= true;
+                return;
+            }
         }
     }
 }

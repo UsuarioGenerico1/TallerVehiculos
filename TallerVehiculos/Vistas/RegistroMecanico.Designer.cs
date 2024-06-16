@@ -170,6 +170,7 @@
             textCedula.Name = "textCedula";
             textCedula.Size = new Size(458, 30);
             textCedula.TabIndex = 6;
+            textCedula.KeyPress += textCedula_KeyPress;
             // 
             // label6
             // 

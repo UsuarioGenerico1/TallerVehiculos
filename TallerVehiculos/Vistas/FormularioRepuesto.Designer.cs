@@ -97,6 +97,7 @@
             textPrecio.Name = "textPrecio";
             textPrecio.Size = new Size(277, 27);
             textPrecio.TabIndex = 3;
+            textPrecio.KeyPress += textPrecio_KeyPress;
             // 
             // textRepuesto
             // 

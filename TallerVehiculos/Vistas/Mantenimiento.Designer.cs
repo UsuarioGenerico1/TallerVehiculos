@@ -129,6 +129,7 @@
             textIVA.Name = "textIVA";
             textIVA.Size = new Size(314, 30);
             textIVA.TabIndex = 13;
+            textIVA.KeyPress += textIVA_KeyPress;
             // 
             // label10
             // 
@@ -174,6 +175,7 @@
             // 
             // cbTipoMantenimiento
             // 
+            cbTipoMantenimiento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbTipoMantenimiento.FormattingEnabled = true;
             cbTipoMantenimiento.Location = new Point(242, 77);
             cbTipoMantenimiento.Name = "cbTipoMantenimiento";
@@ -337,6 +339,7 @@
             // 
             txtEspecialidad.Location = new Point(486, 65);
             txtEspecialidad.Name = "txtEspecialidad";
+            txtEspecialidad.ReadOnly = true;
             txtEspecialidad.Size = new Size(275, 27);
             txtEspecialidad.TabIndex = 5;
             // 
@@ -344,6 +347,7 @@
             // 
             txtNombreMecanico.Location = new Point(486, 32);
             txtNombreMecanico.Name = "txtNombreMecanico";
+            txtNombreMecanico.ReadOnly = true;
             txtNombreMecanico.Size = new Size(275, 27);
             txtNombreMecanico.TabIndex = 4;
             // 
@@ -416,6 +420,7 @@
             // 
             txtCorreoCliente.Location = new Point(196, 74);
             txtCorreoCliente.Name = "txtCorreoCliente";
+            txtCorreoCliente.ReadOnly = true;
             txtCorreoCliente.Size = new Size(565, 27);
             txtCorreoCliente.TabIndex = 5;
             // 
@@ -423,6 +428,7 @@
             // 
             txtNombreCliente.Location = new Point(486, 41);
             txtNombreCliente.Name = "txtNombreCliente";
+            txtNombreCliente.ReadOnly = true;
             txtNombreCliente.Size = new Size(275, 27);
             txtNombreCliente.TabIndex = 4;
             // 

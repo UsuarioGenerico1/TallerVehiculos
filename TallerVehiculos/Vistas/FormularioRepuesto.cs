@@ -38,9 +38,9 @@ namespace TallerVehiculos.Vistas
             nuevoRepuesto.Precio1 = Convert.ToDouble(textPrecio.Text);
             repuestoController.agregarRepuesto(nuevoRepuesto);
             GetDataRepuesto();
-           
-            textRepuesto.Text=string.Empty;
-            textPrecio.Text=string.Empty;   
+
+            textRepuesto.Text = string.Empty;
+            textPrecio.Text = string.Empty;
         }
 
         private void GetDataRepuesto()
@@ -53,6 +53,22 @@ namespace TallerVehiculos.Vistas
             {
                 MessageBox.Show("Error al obtener los datos" + ex.Message);
             }
+        }
+
+        private void textPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingrese solo numeros");
+
+            }
+            
         }
     }
 }

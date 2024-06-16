@@ -81,7 +81,7 @@ namespace TallerVehiculos.Vistas
                 textDiagnostico.Text = mantenimientoController.buscarMantenimiento(indiceMantenimiento).Diagnostico;
                 textTotalM.Text = CalculoRepuesto().ToString();
                 textSubTotal.Text = (calculoServicios() + CalculoRepuesto()).ToString();
-                textTotal.Text = calculoTotal().ToString();
+                textTotal.Text = calculoTotal(calculoServicios(),CalculoRepuesto()).ToString();
                 textIVA.Text = IVA.ToString();
                 textTotalServicios.Text = calculoServicios().ToString();    
             }
@@ -127,15 +127,16 @@ namespace TallerVehiculos.Vistas
             dgvServicio.Columns["Nombre_Servicio1"].HeaderText = "Descripcion";
             dgvServicio.Columns["Precio1"].HeaderText = "Precio";
         }
-        public double calculoTotal()
+        public double calculoTotal(double servicios, double respuestos)
         {
-            double total;
+            double total=0;
             if (IVA==0) {
-                IVA = 14;
+                IVA = 12;
             }
-
-            total = (calculoServicios() + CalculoRepuesto()) * (IVA/100);
-            total += (calculoServicios() + CalculoRepuesto());
+            else
+            {
+                total =((servicios+respuestos)*(IVA*0.01))+(servicios+respuestos);       
+            }
 
             return  total;
 
@@ -159,9 +160,10 @@ namespace TallerVehiculos.Vistas
         public double CalculoRepuesto()
         {     
             double sumaRepuestos = 0;
-            if (repuestoController.getRepuesto() == null)
+            
+            if (mantenimientoController.buscarMantenimiento(indiceMantenimiento).Tipo_mantenimiento == "Preventivo")
             {
-                sumaRepuestos = 150;
+                    sumaRepuestos = 150;
             }
             else
             {

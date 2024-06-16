@@ -14,7 +14,7 @@ namespace TallerVehiculos.Datos
         string diagnostico;
         string trabajos_realizados;
         string tipo_mantenimiento;
-
+      
         string referenciaCliente;
         string referenciaMecanico;
         public DatosMantenimiento() {
@@ -23,7 +23,7 @@ namespace TallerVehiculos.Datos
             trabajos_realizados = string.Empty;
             tipo_mantenimiento = string.Empty;
             referenciaCliente = string.Empty; 
-            
+            referenciaMecanico = string.Empty;
         }
 
         

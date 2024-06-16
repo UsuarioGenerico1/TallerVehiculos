@@ -62,7 +62,7 @@ namespace TallerVehiculos
         private void dataGridView1_CelltClick(object sender, DataGridViewCellEventArgs e)
         {
             try
-            {   
+            {
                 index = e.RowIndex;
                 DataGridViewRow row = dataGridView1.Rows[index];
 
@@ -75,15 +75,16 @@ namespace TallerVehiculos
                 btnActualizar.Enabled = true;
                 btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
-                
+
             }
-            catch(Exception ex) {
-                MessageBox.Show("No hay datos "+ex.Message);
+            catch (Exception ex)
+            {
+                MessageBox.Show("No hay datos " + ex.Message);
                 btnEliminar.Enabled = false;
-                btnActualizar.Enabled = false; 
+                btnActualizar.Enabled = false;
                 btnGuardar.Enabled = true;
             }
-            
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -98,7 +99,7 @@ namespace TallerVehiculos
                 selectCliente.Correo_Electronico1 = textCorreo.Text;
                 selectCliente.Fecha_Registro1 = dateTimePicker1.Value;
                 clienteController.getCliente().ResetItem(index);
-                
+
             }
             btnEliminar.Enabled = false;
             btnActualizar.Enabled = false;
@@ -153,6 +154,26 @@ namespace TallerVehiculos
                 btnActualizar.Enabled = false;
                 btnGuardar.Enabled = true;
                 MessageBox.Show("los datos se han borrado");
+            }
+        }
+
+        private void textCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingrese solo numeros");
+
+            }
+            if (textCedula.Text.Length >= 10)
+            {
+                e.Handled = true;
+                return;
             }
         }
     }

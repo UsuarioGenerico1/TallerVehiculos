@@ -97,7 +97,7 @@ namespace TallerVehiculos
                 selectMecanico.Direccion1 = textDireccion.Text;
                 selectMecanico.Especialidad1 = textEspecialidad.Text;
                 selectMecanico.Experiencia1 = textExp.Text;
-                mecanicoController.getMecanico().ResetItem(index);             
+                mecanicoController.getMecanico().ResetItem(index);
             }
             btnEliminar.Enabled = false;
             btnActualizar.Enabled = false;
@@ -131,13 +131,13 @@ namespace TallerVehiculos
                 btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("No hay datos " + ex.Message);
                 btnEliminar.Enabled = false;
                 btnActualizar.Enabled = false;
                 btnGuardar.Enabled = true;
-            }        
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -157,6 +157,26 @@ namespace TallerVehiculos
                 btnGuardar.Enabled = true;
                 MessageBox.Show("los datos se han borrado");
             }
-        }     
+        }
+
+        private void textCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))
+            {
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingrese solo numeros");
+
+            }
+            if (textCedula.Text.Length >= 10)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }
