@@ -67,6 +67,7 @@
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
@@ -90,6 +91,7 @@
             dataGridViewR.RowTemplate.Height = 29;
             dataGridViewR.Size = new Size(714, 188);
             dataGridViewR.TabIndex = 4;
+            dataGridViewR.CellClick += dataGridViewR_CellClick;
             // 
             // textPrecio
             // 

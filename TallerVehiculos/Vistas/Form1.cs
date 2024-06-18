@@ -1,3 +1,4 @@
+using System.Text;
 using TallerVehiculos.Controlador;
 
 namespace TallerVehiculos
@@ -38,14 +39,24 @@ namespace TallerVehiculos
             mantenimiento.ShowDialog();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void integrantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            List<string> list = new List<string>
+            {
+                "Gutierrez Murillo Joseph Gerardo",
+                "Lomas Cepeda Milton Leonardo",
+                "Clavijo Fariño Harold Esteban",
+                "Domínguez Gómez Carlos Emanuel",
+                
 
-        }
+            };
+            StringBuilder sb = new StringBuilder(); 
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+            foreach (string item in list) { 
+                sb.AppendLine(item);    
+            }
 
+            MessageBox.Show(sb.ToString());
         }
     }
 }

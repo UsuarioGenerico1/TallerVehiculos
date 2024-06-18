@@ -20,6 +20,7 @@ namespace TallerVehiculos
         {
             InitializeComponent();
             this.clienteController = Controller;
+
             if (clienteController.getCliente() != null)
             {
                 dataGridView1.DataSource = clienteController.getCliente();

@@ -153,28 +153,6 @@ namespace TallerVehiculos
             }
         }
 
-        public void guardarDatosServicios()
-        {
-            try
-            {
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
-                {
-                    if (checkedListBox1.CheckedItems[i] != null)
-                    {
-                        // serviciosSelecinados1.Add(servicios.buscarServicio(checkedListBox1.CheckedItems[i].ToString()));
-                        servicios.agregarServicioSeleccionado(servicios.buscarServicio2(checkedListBox1.CheckedIndices[i]));
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("los valores nulos no se estan contando");
-            }
-
-        }
-
         public void guardarDatosVehiculo()
         {
             Vehiculo nuevoVehiculo = new Vehiculo();

@@ -32,19 +32,22 @@
             btn_rg_cliente = new Button();
             btn_rg_mecanico = new Button();
             btn_gr_mantenimiento = new Button();
+            menuStrip1 = new MenuStrip();
+            iNFOToolStripMenuItem = new ToolStripMenuItem();
+            integrantesToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Nirmala UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(218, 9);
+            label1.Location = new Point(213, 75);
             label1.Name = "label1";
             label1.Size = new Size(369, 62);
             label1.TabIndex = 0;
             label1.Text = "Taller Mecanico";
             label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
             // 
             // btn_rg_cliente
             // 
@@ -52,7 +55,7 @@
             btn_rg_cliente.FlatStyle = FlatStyle.Flat;
             btn_rg_cliente.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btn_rg_cliente.ForeColor = SystemColors.ControlText;
-            btn_rg_cliente.Location = new Point(127, 74);
+            btn_rg_cliente.Location = new Point(122, 140);
             btn_rg_cliente.Name = "btn_rg_cliente";
             btn_rg_cliente.Size = new Size(535, 115);
             btn_rg_cliente.TabIndex = 1;
@@ -66,7 +69,7 @@
             btn_rg_mecanico.FlatStyle = FlatStyle.Flat;
             btn_rg_mecanico.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btn_rg_mecanico.ForeColor = SystemColors.ControlText;
-            btn_rg_mecanico.Location = new Point(127, 195);
+            btn_rg_mecanico.Location = new Point(122, 261);
             btn_rg_mecanico.Name = "btn_rg_mecanico";
             btn_rg_mecanico.Size = new Size(535, 115);
             btn_rg_mecanico.TabIndex = 2;
@@ -80,13 +83,37 @@
             btn_gr_mantenimiento.FlatStyle = FlatStyle.Flat;
             btn_gr_mantenimiento.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             btn_gr_mantenimiento.ForeColor = SystemColors.ControlText;
-            btn_gr_mantenimiento.Location = new Point(127, 316);
+            btn_gr_mantenimiento.Location = new Point(122, 382);
             btn_gr_mantenimiento.Name = "btn_gr_mantenimiento";
             btn_gr_mantenimiento.Size = new Size(535, 115);
             btn_gr_mantenimiento.TabIndex = 3;
             btn_gr_mantenimiento.Text = "Registrar Mantenimiento";
             btn_gr_mantenimiento.UseVisualStyleBackColor = false;
             btn_gr_mantenimiento.Click += btn_gr_mantenimiento_Click;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { iNFOToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(782, 28);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // iNFOToolStripMenuItem
+            // 
+            iNFOToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { integrantesToolStripMenuItem });
+            iNFOToolStripMenuItem.Name = "iNFOToolStripMenuItem";
+            iNFOToolStripMenuItem.Size = new Size(56, 24);
+            iNFOToolStripMenuItem.Text = "INFO";
+            // 
+            // integrantesToolStripMenuItem
+            // 
+            integrantesToolStripMenuItem.Name = "integrantesToolStripMenuItem";
+            integrantesToolStripMenuItem.Size = new Size(166, 26);
+            integrantesToolStripMenuItem.Text = "Integrantes";
+            integrantesToolStripMenuItem.Click += integrantesToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -98,9 +125,12 @@
             Controls.Add(label1);
             Controls.Add(btn_rg_mecanico);
             Controls.Add(btn_rg_cliente);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
-            Text = " Taller Mecanico";
-            Load += Form1_Load;
+            Text = " ";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,5 +141,8 @@
         private Button btn_rg_cliente;
         private Button btn_rg_mecanico;
         private Button btn_gr_mantenimiento;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem iNFOToolStripMenuItem;
+        private ToolStripMenuItem integrantesToolStripMenuItem;
     }
 }

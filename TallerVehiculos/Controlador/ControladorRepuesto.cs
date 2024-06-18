@@ -25,5 +25,11 @@ namespace TallerVehiculos.Controlador
         {
             return Lista_Repuestos;
         }
+
+        public void eliminarRepuesto(int indice)
+        {
+            Lista_Repuestos.RemoveAt(indice);
+
+        }
     }
 }
